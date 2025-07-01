@@ -11,37 +11,142 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
-    <style>
-        .hero-banner {
-            background: linear-gradient(180deg, 
-                rgba(8, 151, 208, 0.9) 0%, 
-                rgba(8, 151, 208, 0.1) 100%),
-                url('images/Plotter_EPSON_T3170.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 70vh;
+      <style>
+        .hero-section {
+            background: linear-gradient(135deg, #0897d0 0%, #06b6f0 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             color: white;
             position: relative;
+            overflow: hidden;
         }
         
-        .hero-banner::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, 
-                rgba(47, 42, 97, 0.8) 0%, 
-                rgba(8, 151, 208, 0.2) 100%);
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .floating-plotter {
+            position: absolute;
+            opacity: 0;
+            transform: translateY(100px) scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .floating-plotter.animate {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        .floating-plotter.epson {
+            right: 5%;
+            top: 20%;
+            width: 300px;
+            animation-delay: 0.5s;
+        }
+        
+        .floating-plotter.hp {
+            right: 15%;
+            bottom: 10%;
+            width: 280px;
+            animation-delay: 1s;
+        }
+        
+        .plotter-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+        
+        .plotter-card.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .spec-badge {
+            background: rgba(8, 151, 208, 0.2);
+            border: 1px solid rgba(8, 151, 208, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            display: inline-block;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modern-card {
+            background: white;
+            border-radius: 24px;
+            border: none;
+            box-shadow: 0 20px 40px rgba(8, 151, 208, 0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        
+        .modern-card.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(8, 151, 208, 0.15);
+        }
+        
+        .tech-spec {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1rem 0;
         }
         
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 10;
+        }
+        
+        .text-primary-custom {
+            color: #0897d0 !important;
+        }
+        
+        .btn-primary-custom {
+            background: #0897d0;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(8, 151, 208, 0.3);
+        }
+        
+        .btn-primary-custom:hover {
+            background: #0678a8;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(8, 151, 208, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .floating-plotter {
+                display: none;
+            }
+            
+            .hero-section {
+                min-height: 70vh;
+            }
         }
     </style>
 </head>
@@ -85,153 +190,244 @@
                 </ul>
             </div>
         </div>
+    </nav>    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0897d0;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" height="40" class="me-2">
+                <span class="fw-bold">Centro de Cópias</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Serviços
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="plotagem.html">Plotagem de Engenharia</a></li>
+                            <li><a class="dropdown-item" href="pulseiras.html">Pulseiras de Festa</a></li>
+                            <li><a class="dropdown-item" href="impressoes.html">Impressões</a></li>
+                            <li><a class="dropdown-item" href="carimbos.html">Carimbos</a></li>
+                            <li><a class="dropdown-item" href="crachas.html">Crachás</a></li>
+                            <li><a class="dropdown-item" href="outros-servicos.html">Outros Serviços</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <!-- Hero Banner -->
-    <section class="hero-banner">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Floating Plotters -->
+        <div class="floating-plotter epson" id="epsonPlotter">
+            <img src="images/Plotter_EPSON_T3170.png" alt="Epson T3170" class="img-fluid">
+        </div>
+        <div class="floating-plotter hp" id="hpPlotter">
+            <img src="images/Plotter_HP_T2500.png" alt="HP T2500" class="img-fluid">
+        </div>
+        
         <div class="container">
             <div class="hero-content">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <h1 class="display-3 fw-bold mb-4">Plotagem de Engenharia</h1>
-                        <p class="lead fs-4 mb-4">
-                            Precisão e qualidade profissional para seus projetos de engenharia e arquitetura. 
-                            Plotagem até formato A0 com tecnologia de ponta.
+                    <div class="col-lg-7">
+                        <h1 class="display-3 fw-bold mb-4">
+                            Plotagem de <span style="color: #ffffff;">Engenharia</span>
+                        </h1>
+                        <p class="lead fs-4 mb-4" style="line-height: 1.6;">
+                            Tecnologia de ponta em plotagem para projetos de engenharia e arquitetura. 
+                            Precisão milimétrica até formato A0.
                         </p>
-                        <div class="d-flex gap-3">
-                            <a href="#detalhes" class="btn btn-primary btn-lg">
-                                <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        
+                        <!-- Plotter Cards -->
+                        <div class="plotter-card" id="plotterCard1">
+                            <h5 class="fw-bold mb-3">🖨️ Epson SureColor T3170</h5>
+                            <div class="spec-badge">Resolução 2400x1200 dpi</div>
+                            <div class="spec-badge">Largura 24"</div>
+                            <div class="spec-badge">PrecisionCore</div>
+                        </div>
+                        
+                        <div class="plotter-card" id="plotterCard2">
+                            <h5 class="fw-bold mb-3">🖨️ HP DesignJet T2500</h5>
+                            <div class="spec-badge">Formato A0+</div>
+                            <div class="spec-badge">Thermal Inkjet</div>
+                            <div class="spec-badge">Cores Precisas</div>
+                        </div>
+                        
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#equipamentos" class="btn btn-primary-custom btn-lg">
+                                <i class="fas fa-cogs me-2"></i>Ver Equipamentos
                             </a>
-                            <a href="index.html#contato" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2"></i>Solicitar Orçamento
+                            <a href="index.html#contato" class="btn btn-outline-light btn-lg" style="border-radius: 50px;">
+                                <i class="fas fa-phone me-2"></i>Orçamento
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Detalhes do Serviço -->
-    <section id="detalhes" class="py-5">
+    </section>    <!-- Equipamentos -->
+    <section id="equipamentos" class="py-5">
         <div class="container">
-            <div class="row align-items-center mb-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-primary-custom">Nossos Equipamentos</h2>
+                <p class="lead">Tecnologia de última geração para resultados perfeitos</p>
+            </div>
+            
+            <div class="row g-5">
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-4">Plotagem Profissional</h2>
-                    <p class="lead">
-                        Oferecemos serviços de plotagem com a mais alta qualidade para atender às necessidades 
-                        de engenheiros, arquitetos e profissionais da construção civil.
-                    </p>
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Formatos disponíveis:</strong> A4, A3, A2, A1 e A0
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Alta resolução:</strong> Impressão com qualidade profissional
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Papéis especiais:</strong> Sulfite, vegetal, couché e outros
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Entrega rápida:</strong> Prazos compatíveis com suas necessidades
-                        </li>
-                    </ul>
+                    <div class="modern-card h-100" id="card1">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/Plotter_EPSON_T3170-2.png" class="card-img-top" alt="Plotter Epson T3170" style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-primary fs-6">Epson</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-primary-custom mb-3">SureColor T3170</h3>
+                            <p class="card-text mb-4">
+                                Plotter profissional com tecnologia PrecisionCore, ideal para 
+                                projetos técnicos que exigem máxima precisão e qualidade.
+                            </p>
+                            
+                            <div class="tech-spec">
+                                <h6 class="fw-bold mb-3">Especificações Técnicas:</h6>
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-expand-arrows-alt text-primary-custom me-2"></i>
+                                            <small><strong>Largura:</strong> 24 polegadas</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-eye text-primary-custom me-2"></i>
+                                            <small><strong>Resolução:</strong> 2400x1200 dpi</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-tachometer-alt text-primary-custom me-2"></i>
+                                            <small><strong>Velocidade:</strong> Otimizada</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-palette text-primary-custom me-2"></i>
+                                            <small><strong>Cores:</strong> 4 cores UltraChrome</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="col-lg-6">
-                    <img src="images/Plotter_EPSON_T3170-2.png" alt="Plotter Epson T3170" class="img-fluid rounded shadow">
+                    <div class="modern-card h-100" id="card2">
+                        <div class="position-relative overflow-hidden">
+                            <img src="images/Plotter_HP_T2500.png" class="card-img-top" alt="Plotter HP T2500" style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 start-0 m-3">
+                                <span class="badge bg-primary fs-6">HP</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-primary-custom mb-3">DesignJet T2500</h3>
+                            <p class="card-text mb-4">
+                                Solução robusta para plotagem de grande formato, oferecendo 
+                                versatilidade e confiabilidade para projetos complexos.
+                            </p>
+                            
+                            <div class="tech-spec">
+                                <h6 class="fw-bold mb-3">Especificações Técnicas:</h6>
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-expand-arrows-alt text-primary-custom me-2"></i>
+                                            <small><strong>Formato:</strong> A0 e superiores</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-microchip text-primary-custom me-2"></i>
+                                            <small><strong>Tecnologia:</strong> HP Thermal Inkjet</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-paint-brush text-primary-custom me-2"></i>
+                                            <small><strong>Qualidade:</strong> Cores vivas e precisas</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-memory text-primary-custom me-2"></i>
+                                            <small><strong>Memória:</strong> Alta capacidade</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Equipamentos -->
+    </section>    <!-- Aplicações -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Nossos Equipamentos</h2>
-                <p class="lead">Tecnologia de ponta para resultados excepcionais</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <img src="images/Plotter_EPSON_T3170-3.png" class="card-img-top" alt="Plotter Epson T3170">
-                        <div class="card-body">
-                            <h5 class="card-title">Plotter Epson SureColor T3170</h5>
-                            <p class="card-text">
-                                Equipamento profissional com tecnologia PrecisionCore que garante 
-                                impressões precisas e durabilidades excepcionais.
-                            </p>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-star text-warning me-2"></i>Resolução até 2400 x 1200 dpi</li>
-                                <li><i class="fas fa-star text-warning me-2"></i>Largura máxima: 24 polegadas</li>
-                                <li><i class="fas fa-star text-warning me-2"></i>Velocidade otimizada</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <img src="images/Plotter_HP_T2500.png" class="card-img-top" alt="Plotter HP T2500">
-                        <div class="card-body">
-                            <h5 class="card-title">Plotter HP DesignJet T2500</h5>
-                            <p class="card-text">
-                                Solução robusta e confiável para plotagem de grande formato, 
-                                ideal para projetos técnicos complexos.
-                            </p>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-star text-warning me-2"></i>Tecnologia HP Thermal Inkjet</li>
-                                <li><i class="fas fa-star text-warning me-2"></i>Formato A0 e superiores</li>
-                                <li><i class="fas fa-star text-warning me-2"></i>Cores vivas e precisas</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Aplicações -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Aplicações</h2>
-                <p class="lead">Ideal para diversos tipos de projetos</p>
+                <h2 class="display-5 fw-bold text-primary-custom">Aplicações</h2>
+                <p class="lead">Projetos que realizamos com excelência</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-building fa-4x text-primary"></i>
+                    <div class="modern-card text-center p-4" id="app1">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle" style="width: 80px; height: 80px;">
+                                <i class="fas fa-building fa-2x text-primary-custom"></i>
+                            </div>
                         </div>
-                        <h5>Projetos Arquitetônicos</h5>
-                        <p>Plantas baixas, cortes, fachadas e detalhamentos arquitetônicos.</p>
+                        <h5 class="fw-bold mb-3">Projetos Arquitetônicos</h5>
+                        <p class="text-muted">Plantas baixas, cortes, fachadas, detalhamentos e projetos executivos com precisão milimétrica.</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-cogs fa-4x text-primary"></i>
+                    <div class="modern-card text-center p-4" id="app2">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle" style="width: 80px; height: 80px;">
+                                <i class="fas fa-cogs fa-2x text-primary-custom"></i>
+                            </div>
                         </div>
-                        <h5>Desenhos de Engenharia</h5>
-                        <p>Projetos estruturais, hidráulicos, elétricos e mecânicos.</p>
+                        <h5 class="fw-bold mb-3">Engenharia</h5>
+                        <p class="text-muted">Projetos estruturais, hidráulicos, elétricos, mecânicos e de instalações industriais.</p>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-map fa-4x text-primary"></i>
+                    <div class="modern-card text-center p-4" id="app3">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle" style="width: 80px; height: 80px;">
+                                <i class="fas fa-map fa-2x text-primary-custom"></i>
+                            </div>
                         </div>
-                        <h5>Mapas e Plantas</h5>
-                        <p>Levantamentos topográficos, plantas de situação e locação.</p>
+                        <h5 class="fw-bold mb-3">Topografia</h5>
+                        <p class="text-muted">Levantamentos topográficos, plantas de situação, locação e projetos urbanísticos.</p>
                     </div>
                 </div>
             </div>
@@ -239,24 +435,22 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container text-center">
+    <section class="py-5" style="background: linear-gradient(135deg, #0897d0 0%, #06b6f0 100%);">
+        <div class="container text-center text-white">
             <h2 class="display-5 fw-bold mb-4">Pronto para plotar seu projeto?</h2>
             <p class="lead mb-4">
-                Entre em contato conosco e receba um orçamento personalizado para suas necessidades.
+                Entre em contato e receba um orçamento personalizado para suas necessidades de plotagem.
             </p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="index.html#contato" class="btn btn-light btn-lg">
+                <a href="index.html#contato" class="btn btn-light btn-lg" style="border-radius: 50px; color: #0897d0; font-weight: 600;">
                     <i class="fas fa-envelope me-2"></i>Solicitar Orçamento
                 </a>
-                <a href="tel:+5511999999999" class="btn btn-outline-light btn-lg">
+                <a href="tel:+5511999999999" class="btn btn-outline-light btn-lg" style="border-radius: 50px;">
                     <i class="fas fa-phone me-2"></i>Ligar Agora
                 </a>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
+    </section>    <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
@@ -273,5 +467,77 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animação dos plotters flutuantes
+            setTimeout(() => {
+                document.getElementById('epsonPlotter').classList.add('animate');
+            }, 500);
+            
+            setTimeout(() => {
+                document.getElementById('hpPlotter').classList.add('animate');
+            }, 1000);
+            
+            // Animação dos cards de plotters no hero
+            setTimeout(() => {
+                document.getElementById('plotterCard1').classList.add('show');
+            }, 1500);
+            
+            setTimeout(() => {
+                document.getElementById('plotterCard2').classList.add('show');
+            }, 2000);
+            
+            // Intersection Observer para animações dos cards
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar cards modernos
+            const modernCards = document.querySelectorAll('.modern-card');
+            modernCards.forEach((card, index) => {
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 200);
+            });
+            
+            // Smooth scroll para links âncora
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const navHeight = document.querySelector('.navbar').offsetHeight;
+                        window.scrollTo({
+                            top: target.offsetTop - navHeight - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Efeito parallax suave nos plotters flutuantes
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const epsonPlotter = document.getElementById('epsonPlotter');
+                const hpPlotter = document.getElementById('hpPlotter');
+                
+                if (epsonPlotter && hpPlotter) {
+                    epsonPlotter.style.transform = `translateY(${scrolled * 0.1}px) scale(1)`;
+                    hpPlotter.style.transform = `translateY(${scrolled * 0.15}px) scale(1)`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
