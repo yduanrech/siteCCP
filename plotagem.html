@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotagem de Engenharia - Centro de Cópias</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .hero-banner {
+            background: linear-gradient(180deg, 
+                rgba(8, 151, 208, 0.9) 0%, 
+                rgba(8, 151, 208, 0.1) 100%),
+                url('images/Plotter_EPSON_T3170.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, 
+                rgba(47, 42, 97, 0.8) 0%, 
+                rgba(8, 151, 208, 0.2) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2f2a61;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" height="40" class="me-2">
+                <span class="fw-bold">Centro de Cópias</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Serviços
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="plotagem.html">Plotagem de Engenharia</a></li>
+                            <li><a class="dropdown-item" href="pulseiras.html">Pulseiras de Festa</a></li>
+                            <li><a class="dropdown-item" href="impressoes.html">Impressões</a></li>
+                            <li><a class="dropdown-item" href="carimbos.html">Carimbos</a></li>
+                            <li><a class="dropdown-item" href="crachas.html">Crachás</a></li>
+                            <li><a class="dropdown-item" href="outros-servicos.html">Outros Serviços</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1 class="display-3 fw-bold mb-4">Plotagem de Engenharia</h1>
+                        <p class="lead fs-4 mb-4">
+                            Precisão e qualidade profissional para seus projetos de engenharia e arquitetura. 
+                            Plotagem até formato A0 com tecnologia de ponta.
+                        </p>
+                        <div class="d-flex gap-3">
+                            <a href="#detalhes" class="btn btn-primary btn-lg">
+                                <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                            </a>
+                            <a href="index.html#contato" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2"></i>Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalhes do Serviço -->
+    <section id="detalhes" class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Plotagem Profissional</h2>
+                    <p class="lead">
+                        Oferecemos serviços de plotagem com a mais alta qualidade para atender às necessidades 
+                        de engenheiros, arquitetos e profissionais da construção civil.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-3"></i>
+                            <strong>Formatos disponíveis:</strong> A4, A3, A2, A1 e A0
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-3"></i>
+                            <strong>Alta resolução:</strong> Impressão com qualidade profissional
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-3"></i>
+                            <strong>Papéis especiais:</strong> Sulfite, vegetal, couché e outros
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-check-circle text-primary me-3"></i>
+                            <strong>Entrega rápida:</strong> Prazos compatíveis com suas necessidades
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/Plotter_EPSON_T3170-2.png" alt="Plotter Epson T3170" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipamentos -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Nossos Equipamentos</h2>
+                <p class="lead">Tecnologia de ponta para resultados excepcionais</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="images/Plotter_EPSON_T3170-3.png" class="card-img-top" alt="Plotter Epson T3170">
+                        <div class="card-body">
+                            <h5 class="card-title">Plotter Epson SureColor T3170</h5>
+                            <p class="card-text">
+                                Equipamento profissional com tecnologia PrecisionCore que garante 
+                                impressões precisas e durabilidades excepcionais.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-star text-warning me-2"></i>Resolução até 2400 x 1200 dpi</li>
+                                <li><i class="fas fa-star text-warning me-2"></i>Largura máxima: 24 polegadas</li>
+                                <li><i class="fas fa-star text-warning me-2"></i>Velocidade otimizada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="images/Plotter_HP_T2500.png" class="card-img-top" alt="Plotter HP T2500">
+                        <div class="card-body">
+                            <h5 class="card-title">Plotter HP DesignJet T2500</h5>
+                            <p class="card-text">
+                                Solução robusta e confiável para plotagem de grande formato, 
+                                ideal para projetos técnicos complexos.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-star text-warning me-2"></i>Tecnologia HP Thermal Inkjet</li>
+                                <li><i class="fas fa-star text-warning me-2"></i>Formato A0 e superiores</li>
+                                <li><i class="fas fa-star text-warning me-2"></i>Cores vivas e precisas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplicações -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Aplicações</h2>
+                <p class="lead">Ideal para diversos tipos de projetos</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-building fa-4x text-primary"></i>
+                        </div>
+                        <h5>Projetos Arquitetônicos</h5>
+                        <p>Plantas baixas, cortes, fachadas e detalhamentos arquitetônicos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-cogs fa-4x text-primary"></i>
+                        </div>
+                        <h5>Desenhos de Engenharia</h5>
+                        <p>Projetos estruturais, hidráulicos, elétricos e mecânicos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-map fa-4x text-primary"></i>
+                        </div>
+                        <h5>Mapas e Plantas</h5>
+                        <p>Levantamentos topográficos, plantas de situação e locação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Pronto para plotar seu projeto?</h2>
+            <p class="lead mb-4">
+                Entre em contato conosco e receba um orçamento personalizado para suas necessidades.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="index.html#contato" class="btn btn-light btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Solicitar Orçamento
+                </a>
+                <a href="tel:+5511999999999" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>Ligar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Centro de Cópias</h5>
+                    <p>Seus serviços gráficos de qualidade</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 Centro de Cópias. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

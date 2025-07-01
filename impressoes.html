@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressões A4/A3 - Centro de Cópias</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .hero-banner {
+            background: linear-gradient(135deg, #0897d0 0%, #3a4a8c 100%);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #2f2a61;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" height="40" class="me-2">
+                <span class="fw-bold">Centro de Cópias</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Serviços
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="plotagem.html">Plotagem de Engenharia</a></li>
+                            <li><a class="dropdown-item" href="pulseiras.html">Pulseiras de Festa</a></li>
+                            <li><a class="dropdown-item active" href="impressoes.html">Impressões</a></li>
+                            <li><a class="dropdown-item" href="carimbos.html">Carimbos</a></li>
+                            <li><a class="dropdown-item" href="crachas.html">Crachás</a></li>
+                            <li><a class="dropdown-item" href="outros-servicos.html">Outros Serviços</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4">Impressões A4/A3</h1>
+                    <p class="lead fs-4 mb-4">
+                        Impressões laser de alta qualidade em preto e branco e coloridas. 
+                        Tecnologia avançada para resultados profissionais.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#detalhes" class="btn btn-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                        </a>
+                        <a href="index.html#contato" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone me-2"></i>Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fas fa-print" style="font-size: 10rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalhes do Serviço -->
+    <section id="detalhes" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Nossos Serviços de Impressão</h2>
+                <p class="lead">Qualidade profissional para todos os seus documentos</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-file-alt fa-4x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Impressão P&B</h5>
+                            <p class="card-text mb-4">
+                                Impressões em preto e branco com qualidade laser para documentos, 
+                                relatórios, apostilas e material de escritório.
+                            </p>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-primary me-2"></i>Formatos A4 e A3</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Papel sulfite 75g/m²</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Resolução 1200 dpi</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Preços especiais para quantidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-palette fa-4x text-primary"></i>
+                            </div>
+                            <h5 class="card-title">Impressão Colorida</h5>
+                            <p class="card-text mb-4">
+                                Impressões coloridas com tecnologia laser para apresentações, 
+                                flyers, material promocional e documentos especiais.
+                            </p>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-primary me-2"></i>Cores vivas e duradouras</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Papel especial disponível</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Acabamento profissional</li>
+                                <li><i class="fas fa-check text-primary me-2"></i>Fidelidade de cores</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Papel -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Tipos de Papel</h2>
+                <p class="lead">Variedade para cada necessidade</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-file fa-3x text-primary"></i>
+                        </div>
+                        <h5>Sulfite 75g</h5>
+                        <p>Papel padrão para uso geral, documentos e relatórios.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-star fa-3x text-primary"></i>
+                        </div>
+                        <h5>Sulfite 90g</h5>
+                        <p>Papel mais encorpado para apresentações e documentos importantes.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-gem fa-3x text-primary"></i>
+                        </div>
+                        <h5>Couché</h5>
+                        <p>Papel brilhante ideal para impressões coloridas e fotos.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-certificate fa-3x text-primary"></i>
+                        </div>
+                        <h5>Outros Especiais</h5>
+                        <p>Vergê, reciclado, cartolina e outros papéis especiais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Por que escolher nossas impressões?</h2>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-tachometer-alt text-primary fs-3 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Velocidade</h6>
+                                    <p class="text-muted mb-0">Impressão rápida sem comprometer a qualidade</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-award text-primary fs-3 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Qualidade</h6>
+                                    <p class="text-muted mb-0">Equipamentos laser de última geração</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-calculator text-primary fs-3 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Preço Justo</h6>
+                                    <p class="text-muted mb-0">Valores competitivos e descontos por quantidade</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-clock text-primary fs-3 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-1">Rapidez</h6>
+                                    <p class="text-muted mb-0">Serviço expresso para urgências</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body text-center p-5">
+                            <h3 class="mb-4">Serviços Adicionais</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Impressão frente e verso</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Grampeamento</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Furações</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Dobras</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Cortes especiais</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Impressão em lotes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabela de Preços -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Preços Especiais</h2>
+                <p class="lead">Descontos progressivos por quantidade</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h5 class="mb-0">Tabela de Descontos</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Quantidade</th>
+                                            <th>P&B A4</th>
+                                            <th>Color A4</th>
+                                            <th>P&B A3</th>
+                                            <th>Color A3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1 - 50 folhas</td>
+                                            <td>R$ 0,20</td>
+                                            <td>R$ 0,80</td>
+                                            <td>R$ 0,40</td>
+                                            <td>R$ 1,60</td>
+                                        </tr>
+                                        <tr>
+                                            <td>51 - 200 folhas</td>
+                                            <td>R$ 0,18</td>
+                                            <td>R$ 0,70</td>
+                                            <td>R$ 0,36</td>
+                                            <td>R$ 1,40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>201 - 500 folhas</td>
+                                            <td>R$ 0,15</td>
+                                            <td>R$ 0,60</td>
+                                            <td>R$ 0,30</td>
+                                            <td>R$ 1,20</td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td>Acima de 500</td>
+                                            <td><strong>Consulte</strong></td>
+                                            <td><strong>Consulte</strong></td>
+                                            <td><strong>Consulte</strong></td>
+                                            <td><strong>Consulte</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <small class="text-muted">*Preços sujeitos a alteração. Consulte condições especiais para grandes volumes.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Precisa de impressões de qualidade?</h2>
+            <p class="lead mb-4">
+                Venha até nossa loja ou entre em contato para mais informações sobre nossos serviços.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="index.html#contato" class="btn btn-light btn-lg">
+                    <i class="fas fa-envelope me-2"></i>Fale Conosco
+                </a>
+                <a href="tel:+5511999999999" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>Ligar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Centro de Cópias</h5>
+                    <p>Seus serviços gráficos de qualidade</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2025 Centro de Cópias. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
