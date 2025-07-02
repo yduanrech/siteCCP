@@ -11,18 +11,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Pulseiras específico */
+        .pulseiras-hero {
+            background: var(--gradient-accent);
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .pulseiras-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .floating-pulseira {
+            position: absolute;
+            opacity: 0;
+            animation: fadeInFloat 1.2s ease-out forwards;
+        }
+        
+        .floating-pulseira.main {
+            right: 8%;
+            top: 25%;
+            max-width: 320px;
+            animation-delay: 0.8s;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-8);
+        }
+        
+        .feature-highlight {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-5);
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-highlight:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .feature-highlight i {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-3);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .benefit-card-pulseiras {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card-pulseiras:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+        
+        .pulseira-type {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            margin: var(--spacing-3) 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .floating-pulseira {
+                display: none;
+            }
+            
+            .pulseiras-hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top modern-navbar">
+    <!-- Navigation Moderna -->
+    <nav class="navbar-modern fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" height="40" class="me-2">
-                <span class="fw-bold">Centro de Cópias</span>
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-container">
+                    <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias">
+                </div>
+                <span class="brand-text">Centro de Cópias</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,15 +131,28 @@
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
                             Serviços
-                        </a>                        <ul class="dropdown-menu modern-dropdown">
-                            <li><a class="dropdown-item" href="plotagem.html">Plotagem de Engenharia</a></li>
-                            <li><a class="dropdown-item active" href="pulseiras.html">Pulseiras de Festa</a></li>
-                            <li><a class="dropdown-item" href="impressoes.html">Impressões</a></li>
-                            <li><a class="dropdown-item" href="carimbos.html">Carimbos</a></li>
-                            <li><a class="dropdown-item" href="crachas.html">Crachás</a></li>
-                            <li><a class="dropdown-item" href="outros-servicos.html">Outros Serviços</a></li>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="plotagem.html">
+                                <i class="fas fa-ruler-combined me-2"></i>Plotagem de Engenharia
+                            </a></li>
+                            <li><a class="dropdown-item active" href="pulseiras.html">
+                                <i class="fas fa-hand-sparkles me-2"></i>Pulseiras de Festa
+                            </a></li>
+                            <li><a class="dropdown-item" href="impressoes.html">
+                                <i class="fas fa-print me-2"></i>Impressões
+                            </a></li>
+                            <li><a class="dropdown-item" href="carimbos.html">
+                                <i class="fas fa-stamp me-2"></i>Carimbos
+                            </a></li>
+                            <li><a class="dropdown-item" href="crachas.html">
+                                <i class="fas fa-id-card me-2"></i>Crachás
+                            </a></li>
+                            <li><a class="dropdown-item" href="outros-servicos.html">
+                                <i class="fas fa-ellipsis-h me-2"></i>Outros Serviços
+                            </a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -51,165 +164,476 @@
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero Banner -->
-    <section class="hero-banner-pulseiras">
-        <div class="container">
-            <div class="hero-content">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h1 class="display-3 fw-bold mb-4">Pulseiras de Festa</h1>
-                        <p class="lead fs-4 mb-4">
-                            Pulseiras personalizadas para eventos, festas, identificação e controle de acesso. 
-                            Qualidade e durabilidade garantidas para seus eventos especiais.
-                        </p>
-                        <div class="d-flex gap-3">
-                            <a href="#detalhes" class="btn btn-primary btn-lg modern-btn">
-                                <i class="fas fa-info-circle me-2"></i>Saiba Mais
-                            </a>
-                            <a href="index.html#contato" class="btn btn-outline-light btn-lg modern-btn">
-                                <i class="fas fa-phone me-2"></i>Solicitar Orçamento
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </nav>    <!-- Hero Section Moderno -->
+    <section class="pulseiras-hero">
+        <!-- Pulseira Flutuante -->
+        <div class="floating-pulseira main">
+            <img src="images/Pulserias_Festa.png" alt="Pulseiras de Festa" class="img-fluid">
         </div>
-        <!-- Floating elements -->
-        <div class="floating-element floating-pulseira-1" id="floating-pulseira-1">
-            <img src="images/Pulserias_Festa.png" alt="Pulseira" class="floating-image">
-        </div>
-    </section>
-
-    <!-- Detalhes do Serviço -->
-    <section id="detalhes" class="py-5">
+        
         <div class="container">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold mb-4">Pulseiras Personalizadas</h2>
-                    <p class="lead">
-                        Especializamos na produção de pulseiras de identificação para todos os tipos de eventos, 
-                        desde festas infantis até grandes eventos corporativos.
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="hero-title">
+                        Pulseiras de <span class="text-gradient">Festa</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Controle de acesso prático e seguro para seus eventos. 
+                        Pulseiras personalizadas que garantem organização e identificação perfeita.
                     </p>
-                    <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Material resistente:</strong> Tyvek de alta qualidade
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Personalização completa:</strong> Textos, logos e cores
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Numeração sequencial:</strong> Para controle de acesso
-                        </li>
-                        <li class="mb-3">
-                            <i class="fas fa-check-circle text-primary me-3"></i>
-                            <strong>Fechamento seguro:</strong> Impossível de remover sem danificar
-                        </li>
-                    </ul>
-                </div>                <div class="col-lg-6">
-                    <img src="images/Pulserias_Festa.png" alt="Pulseiras de Festa" class="img-fluid modern-image floating-pulseira-2" id="floating-pulseira-2">
+                    
+                    <div class="feature-grid">
+                        <div class="feature-highlight">
+                            <i class="fas fa-shield-alt"></i>
+                            <h5>Material Resistente</h5>
+                            <p>Tyvek de alta qualidade, à prova d'água e rasgos</p>
+                        </div>
+                        
+                        <div class="feature-highlight">
+                            <i class="fas fa-palette"></i>
+                            <h5>Cores Vibrantes</h5>
+                            <p>Impressão colorida de alta qualidade</p>
+                        </div>
+                        
+                        <div class="feature-highlight">
+                            <i class="fas fa-lock"></i>
+                            <h5>Sistema Seguro</h5>
+                            <p>Fechamento adesivo inviolável</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta mt-5">
+                        <a href="#tipos" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-list me-2"></i>Ver Tipos
+                        </a>
+                        <a href="#contato" class="btn btn-outline-light btn-lg">
+                            <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Tipos de Pulseiras -->
+    <section id="tipos" class="section-spacing">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Tipos de <span class="text-gradient">Pulseiras</span></h2>
+                <p class="section-subtitle">
+                    Soluções personalizadas para cada tipo de evento
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card-pulseiras text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-birthday-cake text-accent"></i>
+                        </div>
+                        <h5 class="card-title">Festas Infantis</h5>
+                        <p class="card-description">
+                            Pulseiras coloridas e divertidas para aniversários e eventos infantis.
+                        </p>
+                        <div class="pulseira-type">
+                            <strong>Características:</strong><br>
+                            • Cores vibrantes<br>
+                            • Desenhos temáticos<br>
+                            • Material seguro
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card-pulseiras text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-music text-accent"></i>
+                        </div>
+                        <h5 class="card-title">Shows e Baladas</h5>
+                        <p class="card-description">
+                            Controle de acesso para casas noturnas, shows e eventos musicais.
+                        </p>
+                        <div class="pulseira-type">
+                            <strong>Características:</strong><br>
+                            • Fechamento inviolável<br>
+                            • Numeração sequencial<br>
+                            • Resistente à água
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card-pulseiras text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-building text-accent"></i>
+                        </div>
+                        <h5 class="card-title">Eventos Corporativos</h5>
+                        <p class="card-description">
+                            Identificação profissional para congressos, seminários e convenções.
+                        </p>
+                        <div class="pulseira-type">
+                            <strong>Características:</strong><br>
+                            • Design profissional<br>
+                            • Personalização com logo<br>
+                            • Diferentes setores
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="benefit-card-pulseiras text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-umbrella-beach text-accent"></i>
+                        </div>
+                        <h5 class="card-title">Eventos Esportivos</h5>
+                        <p class="card-description">
+                            Identificação para competições, maratonas e eventos esportivos.
+                        </p>
+                        <div class="pulseira-type">
+                            <strong>Características:</strong><br>
+                            • Material resistente<br>
+                            • Confortável ao usar<br>
+                            • Identificação por categoria
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tipos de Pulseiras -->
-    <section class="py-5 modern-section">
+    <!-- Benefícios -->
+    <section class="section-spacing bg-light">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Tipos de Pulseiras</h2>
-                <p class="lead">Soluções para cada tipo de evento</p>
+                <h2 class="section-title">Por que escolher <span class="text-gradient">nossas pulseiras?</span></h2>
+                <p class="section-subtitle">
+                    Qualidade e confiabilidade para seus eventos especiais
+                </p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 text-center modern-card glass-effect">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-birthday-cake fa-3x text-primary"></i>
-                            </div>
-                            <h5 class="card-title">Festas Infantis</h5>
-                            <p class="card-text">
-                                Pulseiras coloridas e divertidas para aniversários e eventos infantis.
-                            </p>
+                <div class="col-lg-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-primary"></i>
                         </div>
+                        <h5 class="card-title">Material Premium</h5>
+                        <p class="card-description">
+                            Utilizamos Tyvek de alta qualidade, resistente à água, 
+                            rasgos e desbotamento.
+                        </p>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check text-success me-2"></i>Resistente à água</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Não rasga facilmente</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cores duradouras</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 text-center modern-card glass-effect">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-music fa-3x text-primary"></i>
-                            </div>
-                            <h5 class="card-title">Shows e Baladas</h5>
-                            <p class="card-text">
-                                Controle de acesso para casas noturnas, shows e eventos musicais.
-                            </p>
+                <div class="col-lg-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-palette text-primary"></i>
                         </div>
-                    </div>
-                </div>                
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 text-center modern-card glass-effect">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-building fa-3x text-primary"></i>
-                            </div>
-                            <h5 class="card-title">Eventos Corporativos</h5>
-                            <p class="card-text">
-                                Identificação profissional para congressos, seminários e convenções.
-                            </p>
-                        </div>
+                        <h5 class="card-title">Personalização Total</h5>
+                        <p class="card-description">
+                            Personalize com seu logo, texto, cores e numeração 
+                            sequencial para controle perfeito.
+                        </p>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check text-success me-2"></i>Logo da sua empresa</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Textos personalizados</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Numeração automática</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 text-center modern-card glass-effect">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-heart fa-3x text-primary"></i>
-                            </div>
-                            <h5 class="card-title">Casamentos</h5>
-                            <p class="card-text">
-                                Pulseiras elegantes para controle de convidados em cerimônias.
-                            </p>
+                <div class="col-lg-4">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-clock text-primary"></i>
                         </div>
+                        <h5 class="card-title">Entrega Rápida</h5>
+                        <p class="card-description">
+                            Produção ágil para atender os prazos do seu evento, 
+                            sem comprometer a qualidade.
+                        </p>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check text-success me-2"></i>Produção expressa</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Prazos garantidos</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Qualidade assegurada</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Características -->
-    <section class="py-5 modern-section-alt">
+    <!-- Preços -->
+    <section class="section-spacing">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Características</h2>
-                <p class="lead">Por que escolher nossas pulseiras?</p>
+                <h2 class="section-title">Preços <span class="text-gradient">Acessíveis</span></h2>
+                <p class="section-subtitle">
+                    Valores que cabem no seu orçamento
+                </p>
+            </div>
+            
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-users fa-3x text-accent mb-3"></i>
+                            <h4>Quantidade Mínima</h4>
+                        </div>
+                        <div class="price-highlight">100 unid.</div>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check text-success me-2"></i>Personalização inclusa</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Material Tyvek</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Numeração sequencial</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-star fa-3x text-accent mb-3"></i>
+                            <h4>Preço Unitário</h4>
+                        </div>
+                        <div class="price-highlight">R$ 0,80</div>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check text-success me-2"></i>Preço por unidade</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Desconto para grandes quantidades</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Orçamento sem compromisso</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="text-muted mb-4">*Preços podem variar conforme personalização e quantidade</p>
+                <a href="#contato" class="btn btn-primary btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento Personalizado
+                </a>
+            </div>
+        </div>
+    </section>    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="cta-title text-white">
+                        Pronto para seu próximo evento?
+                    </h2>
+                    <p class="cta-subtitle text-white opacity-90">
+                        Entre em contato e solicite um orçamento personalizado. 
+                        Garantimos qualidade e pontualidade para seu evento especial.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5547999999999" class="btn btn-light btn-lg me-3" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                        <a href="tel:+5547999999999" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone me-2"></i>Ligar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section-spacing bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Entre em <span class="text-gradient">Contato</span></h2>
+                <p class="section-subtitle">
+                    Solicite seu orçamento e organize seu evento com nossas pulseiras
+                </p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="text-center modern-feature">
-                        <div class="mb-3 feature-icon">
-                            <i class="fas fa-shield-alt fa-4x text-primary"></i>
+                <div class="col-lg-4">
+                    <div class="contact-card h-100">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
                         </div>
-                        <h5>Segurança</h5>
-                        <p>
-                            Fechamento inviolável que impede transferência entre pessoas, 
-                            garantindo controle total do evento.
+                        <h5>WhatsApp</h5>
+                        <p class="text-muted">Atendimento rápido e direto</p>
+                        <a href="https://wa.me/5547999999999" class="btn btn-outline-primary" target="_blank">
+                            Enviar Mensagem
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-card h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Telefone</h5>
+                        <p class="text-muted">(47) 9999-9999</p>
+                        <a href="tel:+5547999999999" class="btn btn-outline-primary">
+                            Ligar Agora
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-card h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Horário de Atendimento</h5>
+                        <p class="text-muted">Seg-Sex: 8h às 18h<br>Sáb: 8h às 12h</p>
+                        <a href="#" class="btn btn-outline-primary">
+                            Ver Localização
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" class="footer-logo">
+                        <h5 class="text-white mt-3">Centro de Cópias</h5>
+                        <p class="text-light opacity-75">
+                            Seus serviços gráficos de qualidade. Pulseiras personalizadas 
+                            para eventos inesquecíveis.
                         </p>
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-tint fa-4x text-primary"></i>
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-title">Serviços</h6>
+                    <ul class="footer-links">
+                        <li><a href="plotagem.html">Plotagem</a></li>
+                        <li><a href="pulseiras.html">Pulseiras</a></li>
+                        <li><a href="impressoes.html">Impressões</a></li>
+                        <li><a href="carimbos.html">Carimbos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-title">Empresa</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#sobre">Sobre Nós</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                        <li><a href="#">Localização</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="footer-title">Contato</h6>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone text-primary me-2"></i>
+                            <span>(47) 9999-9999</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp text-primary me-2"></i>
+                            <span>WhatsApp Direto</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                            <span>Centro de Joinville, SC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            &copy; 2025 Centro de Cópias. Todos os direitos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/5547999999999" class="social-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animações de entrada suaves
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Aplicar animações
+            const elements = document.querySelectorAll('.service-card, .pricing-card, .contact-card, .benefit-card-pulseiras');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(el);
+            });
+            
+            // Navegação suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar-modern');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
                         </div>
                         <h5>Resistência</h5>
                         <p>

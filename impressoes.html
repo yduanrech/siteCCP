@@ -11,18 +11,109 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Impressões específico */
+        .impressoes-hero {
+            background: var(--gradient-primary);
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .impressoes-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .floating-impressora {
+            position: absolute;
+            opacity: 0;
+            animation: fadeInFloat 1.2s ease-out forwards;
+            right: 5%;
+            top: 20%;
+            max-width: 350px;
+            animation-delay: 0.8s;
+        }
+        
+        .impressao-benefit {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-5);
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .impressao-benefit:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .impressao-benefit i {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-3);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .service-type-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .service-type-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+        
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-8);
+        }
+        
+        @media (max-width: 768px) {
+            .floating-impressora {
+                display: none;
+            }
+            
+            .impressoes-hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top modern-navbar">
+    <!-- Navigation Moderna -->
+    <nav class="navbar-modern fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" height="40" class="me-2">
-                <span class="fw-bold">Centro de Cópias</span>
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-container">
+                    <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias">
+                </div>
+                <span class="brand-text">Centro de Cópias</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,15 +122,28 @@
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
                             Serviços
-                        </a>                        <ul class="dropdown-menu modern-dropdown">
-                            <li><a class="dropdown-item" href="plotagem.html">Plotagem de Engenharia</a></li>
-                            <li><a class="dropdown-item" href="pulseiras.html">Pulseiras de Festa</a></li>
-                            <li><a class="dropdown-item active" href="impressoes.html">Impressões</a></li>
-                            <li><a class="dropdown-item" href="carimbos.html">Carimbos</a></li>
-                            <li><a class="dropdown-item" href="crachas.html">Crachás</a></li>
-                            <li><a class="dropdown-item" href="outros-servicos.html">Outros Serviços</a></li>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="plotagem.html">
+                                <i class="fas fa-ruler-combined me-2"></i>Plotagem de Engenharia
+                            </a></li>
+                            <li><a class="dropdown-item" href="pulseiras.html">
+                                <i class="fas fa-hand-sparkles me-2"></i>Pulseiras de Festa
+                            </a></li>
+                            <li><a class="dropdown-item active" href="impressoes.html">
+                                <i class="fas fa-print me-2"></i>Impressões
+                            </a></li>
+                            <li><a class="dropdown-item" href="carimbos.html">
+                                <i class="fas fa-stamp me-2"></i>Carimbos
+                            </a></li>
+                            <li><a class="dropdown-item" href="crachas.html">
+                                <i class="fas fa-id-card me-2"></i>Crachás
+                            </a></li>
+                            <li><a class="dropdown-item" href="outros-servicos.html">
+                                <i class="fas fa-ellipsis-h me-2"></i>Outros Serviços
+                            </a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -51,54 +155,478 @@
                 </ul>
             </div>
         </div>
-    </nav>    <!-- Hero Banner -->
-    <section class="hero-banner-impressoes">
+    </nav>    <!-- Hero Section Moderno -->
+    <section class="impressoes-hero">
+        <!-- Impressora Flutuante -->
+        <div class="floating-impressora">
+            <img src="images/Impressora_Konica_C458.png" alt="Impressora Konica C458" class="img-fluid">
+        </div>
+        
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <h1 class="display-3 fw-bold mb-4">Impressões A4/A3</h1>
-                    <p class="lead fs-4 mb-4">
-                        Impressões laser de alta qualidade em preto e branco e coloridas. 
-                        Tecnologia avançada para resultados profissionais.
+                <div class="col-lg-7">
+                    <h1 class="hero-title">
+                        Impressões <span class="text-gradient">Profissionais</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Documentos profissionais com qualidade laser impecável. 
+                        Tecnologia avançada para resultados que impressionam.
                     </p>
-                    <div class="d-flex gap-3">
-                        <a href="#detalhes" class="btn btn-light btn-lg modern-btn">
-                            <i class="fas fa-info-circle me-2"></i>Saiba Mais
-                        </a>
-                        <a href="index.html#contato" class="btn btn-outline-light btn-lg modern-btn">
-                            <i class="fas fa-phone me-2"></i>Solicitar Orçamento
-                        </a>
+                    
+                    <div class="format-grid">
+                        <div class="impressao-benefit">
+                            <i class="fas fa-file-alt"></i>
+                            <h5>Qualidade Laser</h5>
+                            <p>Impressões nítidas em preto e branco e coloridas</p>
+                        </div>
+                        
+                        <div class="impressao-benefit">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <h5>Formatos A4 e A3</h5>
+                            <p>Flexibilidade para todos os tipos de documentos</p>
+                        </div>
+                        
+                        <div class="impressao-benefit">
+                            <i class="fas fa-clock"></i>
+                            <h5>Rapidez Garantida</h5>
+                            <p>Entrega no prazo para suas necessidades urgentes</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="floating-element floating-impressora-1" id="floating-impressora-1">
-                        <img src="images/Impressora_Konica_C458.png" alt="Impressora" class="floating-image">
+                    
+                    <div class="hero-cta mt-5">
+                        <a href="#tipos" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-list me-2"></i>Ver Serviços
+                        </a>
+                        <a href="#contato" class="btn btn-outline-light btn-lg">
+                            <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detalhes do Serviço -->
-    <section id="detalhes" class="py-5 modern-section">
+    <!-- Tipos de Impressão -->
+    <section id="tipos" class="section-spacing">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Nossos Serviços de Impressão</h2>
-                <p class="lead">Qualidade profissional para todos os seus documentos</p>
+                <h2 class="section-title">Nossos <span class="text-gradient">Serviços</span></h2>
+                <p class="section-subtitle">
+                    Qualidade profissional para todos os seus documentos
+                </p>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100 modern-card glass-effect">
-                        <div class="card-body text-center">
-                            <div class="mb-3 feature-icon">
-                                <i class="fas fa-file-alt fa-4x text-primary"></i>
+                <div class="col-lg-6">
+                    <div class="service-type-card">
+                        <div class="service-icon-bg mb-4">
+                            <i class="fas fa-file-alt text-gray-600"></i>
+                        </div>
+                        <h3 class="card-title">Impressão Preto e Branco</h3>
+                        <p class="card-description">
+                            Impressões laser de alta qualidade para documentos, 
+                            relatórios, apostilas e material de escritório.
+                        </p>
+                        
+                        <div class="mt-4">
+                            <h6 class="fw-bold mb-3">Ideais para:</h6>
+                            <ul class="benefit-list">
+                                <li><i class="fas fa-check text-success me-2"></i>Documentos oficiais</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Relatórios empresariais</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Material didático</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Contratos e propostas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Apostilas e manuais</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-info mt-4 p-3 bg-gray-50 rounded-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>A4:</strong> R$ 0,25
+                                </div>
+                                <div class="col-6">
+                                    <strong>A3:</strong> R$ 0,50
+                                </div>
                             </div>
-                            <h5 class="card-title">Impressão P&B</h5>
-                            <p class="card-text mb-4">
-                                Impressões em preto e branco com qualidade laser para documentos, 
-                                relatórios, apostilas e material de escritório.
-                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="service-type-card">
+                        <div class="service-icon-bg mb-4">
+                            <i class="fas fa-palette text-primary"></i>
+                        </div>
+                        <h3 class="card-title">Impressão Colorida</h3>
+                        <p class="card-description">
+                            Impressões coloridas vibrantes e precisas para 
+                            apresentações, marketing e materiais promocionais.
+                        </p>
+                        
+                        <div class="mt-4">
+                            <h6 class="fw-bold mb-3">Ideais para:</h6>
+                            <ul class="benefit-list">
+                                <li><i class="fas fa-check text-success me-2"></i>Apresentações corporativas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Material promocional</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Gráficos e tabelas</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Fotografias</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Folders e flyers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="pricing-info mt-4 p-3 bg-primary-light rounded-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>A4:</strong> R$ 1,50
+                                </div>
+                                <div class="col-6">
+                                    <strong>A3:</strong> R$ 3,00
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipamento -->
+    <section class="section-spacing bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Tecnologia <span class="text-gradient">Avançada</span></h2>
+                <p class="section-subtitle">
+                    Equipamentos profissionais para resultados superiores
+                </p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <h3 class="mb-4">Konica Minolta C458</h3>
+                        <p class="card-description">
+                            Multifuncional colorida de alto desempenho, oferecendo 
+                            qualidade profissional e velocidade incomparáveis.
+                        </p>
+                        
+                        <div class="equipment-specs">
+                            <h6 class="fw-bold mb-3 text-primary">Especificações Técnicas:</h6>
+                            
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span><strong>Velocidade:</strong> 45 ppm P&B / 45 ppm Color</span>
+                            </div>
+                            
+                            <div class="spec-item">
+                                <i class="fas fa-eye"></i>
+                                <span><strong>Resolução:</strong> 1200 x 1200 dpi</span>
+                            </div>
+                            
+                            <div class="spec-item">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span><strong>Formatos:</strong> A6 a A3</span>
+                            </div>
+                            
+                            <div class="spec-item">
+                                <i class="fas fa-palette"></i>
+                                <span><strong>Cores:</strong> Sistema CMYK + tons especiais</span>
+                            </div>
+                            
+                            <div class="spec-item">
+                                <i class="fas fa-cog"></i>
+                                <span><strong>Tecnologia:</strong> Simitri HD Toner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 text-center">
+                    <img src="images/Impressora_Konica_C458.png" alt="Konica Minolta C458" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vantagens -->
+    <section class="section-spacing">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Por que escolher <span class="text-gradient">nossas impressões?</span></h2>
+                <p class="section-subtitle">
+                    Compromisso com qualidade e atendimento excepcional
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-award text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Qualidade Superior</h5>
+                        <p class="card-description">
+                            Tecnologia laser avançada garantindo nitidez e durabilidade.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-bolt text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Rapidez</h5>
+                        <p class="card-description">
+                            Impressões rápidas sem comprometer a qualidade do resultado.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-dollar-sign text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Preços Justos</h5>
+                        <p class="card-description">
+                            Valores competitivos com desconto para grandes volumes.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center h-100">
+                        <div class="service-icon-bg mx-auto mb-4">
+                            <i class="fas fa-file-contract text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Diversos Papéis</h5>
+                        <p class="card-description">
+                            Ampla variedade de papéis para diferentes necessidades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="cta-title text-white">
+                        Precisa imprimir seus documentos?
+                    </h2>
+                    <p class="cta-subtitle text-white opacity-90">
+                        Entre em contato e solicite um orçamento personalizado. 
+                        Qualidade profissional com preços que cabem no seu bolso.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/5547999999999" class="btn btn-light btn-lg me-3" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                        </a>
+                        <a href="tel:+5547999999999" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-phone me-2"></i>Ligar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section-spacing bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Entre em <span class="text-gradient">Contato</span></h2>
+                <p class="section-subtitle">
+                    Estamos prontos para atender suas necessidades de impressão
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="contact-card h-100">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h5>WhatsApp</h5>
+                        <p class="text-muted">Envie seus arquivos direto pelo WhatsApp</p>
+                        <a href="https://wa.me/5547999999999" class="btn btn-outline-primary" target="_blank">
+                            Enviar Arquivos
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-card h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h5>Telefone</h5>
+                        <p class="text-muted">(47) 9999-9999</p>
+                        <a href="tel:+5547999999999" class="btn btn-outline-primary">
+                            Ligar Agora
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="contact-card h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h5>Loja Física</h5>
+                        <p class="text-muted">Venha até nossa loja com seus arquivos</p>
+                        <a href="#" class="btn btn-outline-primary">
+                            Ver Endereço
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Moderno -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" class="footer-logo">
+                        <h5 class="text-white mt-3">Centro de Cópias</h5>
+                        <p class="text-light opacity-75">
+                            Seus serviços gráficos de qualidade. Impressões profissionais 
+                            com tecnologia de ponta.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-title">Serviços</h6>
+                    <ul class="footer-links">
+                        <li><a href="plotagem.html">Plotagem</a></li>
+                        <li><a href="impressoes.html">Impressões</a></li>
+                        <li><a href="carimbos.html">Carimbos</a></li>
+                        <li><a href="crachas.html">Crachás</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-title">Empresa</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html#sobre">Sobre Nós</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                        <li><a href="#">Localização</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="footer-title">Contato</h6>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone text-primary me-2"></i>
+                            <span>(47) 9999-9999</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp text-primary me-2"></i>
+                            <span>WhatsApp Direto</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                            <span>Centro de Joinville, SC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            &copy; 2025 Centro de Cópias. Todos os direitos reservados.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/5547999999999" class="social-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animações de entrada suaves
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Aplicar animações
+            const elements = document.querySelectorAll('.service-card, .service-type-card, .contact-card');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(el);
+            });
+            
+            // Navegação suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 80;
+                        const elementPosition = target.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar-modern');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
                             <ul class="list-unstyled text-start">
                                 <li><i class="fas fa-check text-primary me-2"></i>Formatos A4 e A3</li>
                                 <li><i class="fas fa-check text-primary me-2"></i>Papel sulfite 75g/m²</li>

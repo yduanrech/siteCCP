@@ -11,18 +11,112 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Carimbos específico */
+        .carimbos-hero {
+            background: var(--gradient-secondary);
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .carimbos-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .carimbo-feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-5);
+            color: white;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: var(--spacing-4);
+        }
+        
+        .carimbo-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .carimbo-feature i {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-3);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .carimbo-type-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-6);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .carimbo-type-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+        
+        .carimbo-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-4);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .carimbo-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-8);
+        }
+        
+        @media (max-width: 768px) {
+            .carimbos-hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top modern-navbar">
+    <!-- Navigation Moderna -->
+    <nav class="navbar-modern fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" height="40" class="me-2">
-                <span class="fw-bold">Centro de Cópias</span>
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-container">
+                    <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias">
+                </div>
+                <span class="brand-text">Centro de Cópias</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,16 +125,28 @@
                         <a class="nav-link" href="index.html">Início</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
                             Serviços
                         </a>
-                        <ul class="dropdown-menu modern-dropdown">
-                            <li><a class="dropdown-item" href="plotagem.html">Plotagem de Engenharia</a></li>
-                            <li><a class="dropdown-item" href="pulseiras.html">Pulseiras de Festa</a></li>
-                            <li><a class="dropdown-item" href="impressoes.html">Impressões</a></li>
-                            <li><a class="dropdown-item active" href="carimbos.html">Carimbos</a></li>
-                            <li><a class="dropdown-item" href="crachas.html">Crachás</a></li>
-                            <li><a class="dropdown-item" href="outros-servicos.html">Outros Serviços</a></li>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="plotagem.html">
+                                <i class="fas fa-ruler-combined me-2"></i>Plotagem de Engenharia
+                            </a></li>
+                            <li><a class="dropdown-item" href="pulseiras.html">
+                                <i class="fas fa-hand-sparkles me-2"></i>Pulseiras de Festa
+                            </a></li>
+                            <li><a class="dropdown-item" href="impressoes.html">
+                                <i class="fas fa-print me-2"></i>Impressões
+                            </a></li>
+                            <li><a class="dropdown-item active" href="carimbos.html">
+                                <i class="fas fa-stamp me-2"></i>Carimbos
+                            </a></li>
+                            <li><a class="dropdown-item" href="crachas.html">
+                                <i class="fas fa-id-card me-2"></i>Crachás
+                            </a></li>
+                            <li><a class="dropdown-item" href="outros-servicos.html">
+                                <i class="fas fa-ellipsis-h me-2"></i>Outros Serviços
+                            </a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -49,6 +155,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#contato">Contato</a>
                     </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
                 </ul>
             </div>
         </div>
