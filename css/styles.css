@@ -547,14 +547,14 @@ p {
    =================================== */
 
 .hero-section {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     background: var(--gradient-subtle);
-    padding-top: 110px;
-    padding-bottom: var(--space-20);
+    padding-top: 90px;
+    padding-bottom: 0;
 }
 
 .hero-modern {
@@ -775,10 +775,11 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-6);
+    margin: 0 auto var(--space-6); /* Garante centralização horizontal */
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
+    flex-shrink: 0; /* Previne alteração de tamanho */
 }
 
 .service-icon::before {
@@ -803,6 +804,13 @@ p {
     transition: var(--transition-base);
     z-index: 1;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important; /* Remove qualquer margem */
+    padding: 0 !important; /* Remove qualquer padding */
 }
 
 .service-card:hover .service-icon i {
@@ -1260,7 +1268,20 @@ p {
 
 /* Scroll suave para toda a página */
 html {
-    scroll-padding-top: 80px; /* Compensa altura do navbar fixo */
+    scroll-padding-top: 90px; /* Altura do navbar apenas */
+}
+
+/* Scroll responsivo */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        scroll-padding-top: 60px;
+    }
 }
 
 /* Container principal com padding adequado */
@@ -1272,6 +1293,125 @@ html {
 section {
     position: relative;
     z-index: 1;
+}
+
+/* Hero Section - Ajustes finais */
+.hero-section .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Garantir que a seção hero ocupe toda a altura da tela */
+.hero-section .container {
+    min-height: calc(100vh - 90px); /* Altura total menos padding-top */
+    display: flex;
+    align-items: center;
+}
+
+.hero-section .row.h-100 {
+    min-height: 100%;
+    width: 100%;
+}
+
+/* Evitar sobreposição entre seções */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Melhorar espaçamento da primeira seção após hero */
+.hero-section + .modern-section {
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajuste específico para scroll da seção de serviços - Responsivo */
+#servicos {
+    scroll-margin-top: 90px;
+    padding-top: clamp(3rem, 8vw, 6rem) !important;
+}
+
+/* Responsividade do scroll offset */
+@media (max-width: 768px) {
+    #servicos {
+        scroll-margin-top: 70px;
+        padding-top: clamp(2rem, 6vw, 4rem) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #servicos {
+        scroll-margin-top: 60px;
+        padding-top: clamp(1.5rem, 5vw, 3rem) !important;
+    }
+}
+
+/* Responsividade da seção hero */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: var(--space-16);
+    }
+    
+    .hero-section .container {
+        min-height: calc(100vh - 100px);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: var(--space-12);
+    }
+    
+    .hero-section .container {
+        min-height: calc(100vh - 120px);
+    }
+}
+
+/* Container principal com padding adequado */
+.main-content {
+    padding-top: 80px; /* Evita que o conteúdo fique atrás do navbar */
+}
+
+/* Melhorias no espaçamento das seções */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===================================
+   SEÇÕES MODERNAS 2025
+   =================================== */
+
+.modern-section {
+    padding: var(--space-16) 0;
+    position: relative;
+}
+
+.section-sm {
+    padding: var(--space-16) 0;
+}
+
+.section-lg {
+    padding: var(--space-32) 0;
+}
+
+.modern-section-gray {
+    background: var(--gray-50);
+}
+
+.modern-section-primary {
+    background: var(--gradient-hero);
+    color: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+    position: relative;
 }
 
 /* Hero Section - Ajustes finais */
@@ -2538,4 +2678,143 @@ a[href^="#"] {
 @keyframes pulse {
     0% { opacity: 1; }
     100% { opacity: 0.6; }
+}
+
+/* Melhorias específicas para centralização */
+.section-header {
+    text-align: center !important;
+    margin-bottom: var(--space-16);
+    max-width: 800px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.section-header .section-title {
+    text-align: center !important;
+    margin-bottom: var(--space-4);
+}
+
+.section-header .section-subtitle {
+    text-align: center !important;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* ===================================
+   CORREÇÃO DOS ÍCONES DOS SERVIÇOS
+   =================================== */
+
+/* Container dos ícones dos serviços */
+.service-icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto; /* Garante centralização */
+}
+
+/* Ícone do serviço - Centralização perfeita */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gray-100);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-6); /* Garante centralização horizontal */
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0; /* Previne alteração de tamanho */
+}
+
+/* Forçar centralização perfeita do ícone FontAwesome */
+.service-icon i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: var(--transition-base);
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important; /* Remove qualquer margem */
+    padding: 0 !important; /* Remove qualquer padding */
+}
+
+/* Tag de serviço */
+.service-tag {
+    position: absolute;
+    top: -8px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 2;
+}
+
+.service-tag .badge {
+    font-size: 0.75rem;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+/* Centralização adicional para todos os cards de serviço */
+.service-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+}
+
+/* Remover qualquer margem/padding que possa causar desalinhamento */
+.service-card .card-body * {
+    box-sizing: border-box;
+}
+
+/* Título do serviço centralizado */
+.service-card .card-title {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Texto do serviço centralizado */
+.service-card .card-text {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Features do serviço centralizadas */
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Feature pills */
+.feature-pill {
+    background: var(--gray-100);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    transition: var(--transition-base);
+    white-space: nowrap;
+}
+
+.feature-pill:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
 }
