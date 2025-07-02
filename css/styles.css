@@ -1009,6 +1009,12 @@ p {
     flex-shrink: 0 !important;
 }
 
+/* 6. Correção do margin nos ícones dentro de flexbox */
+.d-flex .feature-icon {
+    margin: 0 !important;
+    margin-right: var(--space-3) !important; /* Mantém apenas o espaçamento à direita */
+}
+
 /* ===================================
    ANIMAÇÕES E EFEITOS PREMIUM 2025
    =================================== */
