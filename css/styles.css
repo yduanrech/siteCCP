@@ -720,7 +720,6 @@ p {
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
-    border-top: 4px solid var(--primary-color);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -732,9 +731,11 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: var(--primary-color);
-    transition: var(--transition-base);
+    width: 100%;
+    height: 0;
+    background: #2563EB;
+    transition: height 0.3s ease;
+    z-index: 0;
 }
 
 .service-card:hover {
@@ -743,36 +744,30 @@ p {
 }
 
 .service-card:hover::before {
-    height: 8px;
+    height: 6px;
 }
 
-/* Cores específicas para cada serviço */
-.service-card.plotagem::before,
+/* Cores específicas para badges dos serviços */
 .service-card.plotagem .service-badge {
     background: var(--primary-color);
 }
 
-.service-card.pulseiras::before,
 .service-card.pulseiras .service-badge {
     background: var(--accent-color);
 }
 
-.service-card.impressoes::before,
 .service-card.impressoes .service-badge {
     background: var(--success-color);
 }
 
-.service-card.carimbos::before,
 .service-card.carimbos .service-badge {
     background: #8b5cf6; /* Purple */
 }
 
-.service-card.crachas::before,
 .service-card.crachas .service-badge {
     background: #ec4899; /* Pink */
 }
 
-.service-card.outros::before,
 .service-card.outros .service-badge {
     background: var(--gray-600);
 }
