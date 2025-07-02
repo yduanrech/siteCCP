@@ -396,8 +396,9 @@ p {
 }
 
 .modern-navbar .navbar-brand img {
-    background: var(--white);
-    border-radius: 50%;
+    filter: none !important;
+    background: none !important;
+    border-radius: 0 !important;
     padding: var(--space-2);
     box-shadow: var(--elevation-sm);
     transition: var(--transition-base);
@@ -900,6 +901,115 @@ p {
 }
 
 /* ===================================
+   CORREÇÕES ESPECÍFICAS SOLICITADAS
+   =================================== */
+
+/* Remove qualquer fundo ou quadrado do logo da navbar */
+.navbar-brand img,
+.modern-navbar .navbar-brand img,
+.navbar .navbar-brand img {
+    background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    filter: none !important;
+    padding: 0 !important;
+    margin: 0 8px 0 0 !important;
+}
+
+/* Garante que não há wrapper com fundo */
+.navbar-brand {
+    background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Remove animações de qualquer logo */
+.hero-section img,
+.hero-section .col-lg-5 img {
+    animation: none !important;
+    transform: none !important;
+    position: static !important;
+    transition: none !important;
+}
+
+/* Melhor alinhamento para benefícios */
+.hero-section .row.g-2 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.hero-section .row.g-2 > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 8px !important;
+}
+
+/* Alinhamento da seção sobre */
+.modern-section .row.g-3 .col-12 {
+    padding-left: 0 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+/* ===================================
+   MELHORIAS VISUAIS SOLICITADAS 2025
+   =================================== */
+
+/* 1. Remove animação flutuante do logo hero */
+.hero-section .col-lg-5 img {
+    animation: none !important;
+    transform: none !important;
+    position: static !important;
+}
+
+/* 2. Remove fundo circular do logo navbar */
+.navbar-brand img {
+    filter: none !important;
+    background: none !important;
+    border-radius: 0 !important;
+}
+
+/* 3. Remove todas as animações flutuantes */
+.floating-element,
+.floating-image,
+.floating-pulseira-1,
+.floating-pulseira-2,
+.floating-impressora-1,
+.floating-carimbo-1 {
+    animation: none !important;
+    transform: none !important;
+    position: static !important;
+}
+
+/* 4. Melhoria na galeria de equipamentos */
+.equipment-gallery-card {
+    background: #f8f9fa !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    text-align: center !important;
+}
+
+.equipment-gallery-card img {
+    max-height: 200px !important;
+    object-fit: contain !important;
+    width: 100% !important;
+}
+
+/* 5. Correção específica para ícones da seção about */
+.modern-section .feature-icon[style*="width: 50px"] {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.2rem !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    flex-shrink: 0 !important;
+}
+
+/* ===================================
    ANIMAÇÕES E EFEITOS PREMIUM 2025
    =================================== */
 
@@ -1139,4 +1249,33 @@ p {
         box-shadow: none;
         border: 1px solid #ccc;
     }
+}
+
+/* Alinhamento perfeito dos benefícios - Hero Section */
+.hero-content .row.g-3 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.hero-content .row.g-3 > [class*="col-"] {
+    padding-left: 0 !important;
+}
+
+/* Alinhamento perfeito dos benefícios - About Section */  
+.modern-section .row.g-3 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.modern-section .row.g-3 > [class*="col-"] {
+    padding-left: 0 !important;
+}
+
+/* Garantir que os containers não tenham padding lateral */
+.hero-content .mb-5,
+.modern-section .mb-4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
