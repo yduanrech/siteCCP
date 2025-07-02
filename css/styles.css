@@ -271,7 +271,7 @@ p {
     height: 100%;
     background: var(--gradient-hero);
     transition: var(--transition-smooth);
-    z-index: 0;
+    z-index: -1;
 }
 
 .btn-outline-primary:hover::after {
@@ -285,8 +285,8 @@ p {
     box-shadow: var(--elevation-primary);
 }
 
-.btn-outline-primary i,
-.btn-outline-primary span {
+.btn-outline-primary,
+.btn-outline-primary * {
     position: relative;
     z-index: 1;
 }
