@@ -764,28 +764,46 @@ class CentroCopias {
             img.classList.add('loading-shimmer');
             imageObserver.observe(img);
         });
-    }
-
-    /**
+    }    /**
      * Feedback visual para interações
      */
     setupFeedback() {
         // Ripple effect para botões
         document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                const ripple = document.createElement('span');
-                const rect = this.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const x = e.clientX - rect.left - size / 2;
-                const y = e.clientY - rect.top - size / 2;
+            // Cria um container dedicado para os efeitos ripple
+            let rippleContainer = document.createElement('div');
+            rippleContainer.classList.add('ripple-container');
+            btn.appendChild(rippleContainer);
+            
+            btn.addEventListener('mousedown', function(e) {
+                // Não processa cliques com botão direito ou do meio
+                if (e.button !== 0) return;
                 
-                ripple.style.width = ripple.style.height = size + 'px';
+                // Previne múltiplos efeitos simultaneamente
+                const existingRipples = rippleContainer.querySelectorAll('.ripple');
+                existingRipples.forEach(r => r.remove());
+                
+                const ripple = document.createElement('span');
+                const rect = rippleContainer.getBoundingClientRect();
+                
+                // Calcula o tamanho para o efeito
+                const diameter = Math.max(rect.width, rect.height) * 2;
+                
+                // Posiciona o ripple no ponto de clique
+                const x = e.clientX - rect.left - (diameter / 2);
+                const y = e.clientY - rect.top - (diameter / 2);
+                
+                // Configura o ripple
+                ripple.style.width = diameter + 'px';
+                ripple.style.height = diameter + 'px';
                 ripple.style.left = x + 'px';
                 ripple.style.top = y + 'px';
                 ripple.classList.add('ripple');
                 
-                this.appendChild(ripple);
+                // Adiciona o ripple ao container dedicado
+                rippleContainer.appendChild(ripple);
                 
+                // Remove o ripple após a animação
                 setTimeout(() => ripple.remove(), 600);
             });
         });
