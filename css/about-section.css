@@ -1,0 +1,87 @@
+/* Estilos para a seção Sobre Nós */
+
+/* Métricas de credibilidade */
+.metric-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    text-align: center;
+    box-shadow: var(--elevation-sm);
+    transition: var(--transition-smooth);
+    border: 1px solid var(--gray-200);
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--elevation-md);
+    border-color: var(--primary-color);
+}
+
+.metric-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+}
+
+/* Diferenciais competitivos */
+.competitive-advantages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.advantage-item {
+    display: flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--elevation-sm);
+    transition: var(--transition-smooth);
+    border-left: 3px solid var(--success-color);
+}
+
+.advantage-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--elevation-md);
+    background: var(--gray-50);
+}
+
+.advantage-item i {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.advantage-item span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.advantage-item strong {
+    color: var(--text-primary);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .metric-card {
+        margin-bottom: var(--space-4);
+    }
+    
+    .metric-number {
+        font-size: 2rem;
+    }
+    
+    .advantage-item {
+        padding: var(--space-3);
+    }
+}
