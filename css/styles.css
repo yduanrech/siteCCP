@@ -391,8 +391,8 @@ p {
 }
 
 .modern-navbar .navbar-brand:hover {
-    transform: scale(1.02);
-    color: var(--primary-color) !important;
+    color: var(--text-primary) !important;
+    transform: none;
 }
 
 .modern-navbar .navbar-brand img {
@@ -404,7 +404,7 @@ p {
 }
 
 .modern-navbar .navbar-brand:hover img {
-    transform: scale(1.05);
+    transform: none;
 }
 
 .modern-navbar .navbar-nav .nav-link {
@@ -896,6 +896,84 @@ p {
 }
 
 /* ===================================
+   MELHORIAS ESPECÍFICAS DOS CARDS DE CONTATO
+   =================================== */
+
+/* Ajustes específicos para os cards de contato */
+.contact-info {
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+}
+
+.contact-info .fa-2x {
+    margin-bottom: var(--space-4);
+}
+
+.contact-info h5 {
+    margin-bottom: var(--space-3);
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p {
+    margin-bottom: var(--space-2);
+    text-align: center;
+    flex-grow: 1;
+}
+
+.contact-info small {
+    text-align: center;
+    display: block;
+    line-height: 1.4;
+    margin-top: auto;
+}
+
+/* WhatsApp icon styling */
+.contact-info .fab.fa-whatsapp {
+    font-size: 1.1rem;
+    margin-right: var(--space-2);
+}
+
+/* Footer melhorado */
+footer.bg-primary {
+    background: var(--gray-900) !important;
+    color: var(--white) !important;
+}
+
+footer.bg-primary h5 {
+    color: var(--white) !important;
+    font-weight: 700;
+}
+
+footer.bg-primary p {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+footer.bg-primary .opacity-75 {
+    opacity: 0.9 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Responsive adjustments for contact cards */
+@media (max-width: 768px) {
+    .contact-info {
+        min-height: auto;
+        padding: var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+    
+    .contact-info h5 {
+        font-size: 1.125rem;
+    }
+}
+
+/* ===================================
    CORREÇÕES ESPECÍFICAS SOLICITADAS
    =================================== */
 
@@ -1278,4 +1356,139 @@ p {
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+
+/* ===================================
+   SEÇÃO DE CONTATO REORGANIZADA
+   =================================== */
+
+/* Melhoria dos cards de contato */
+.contact-info {
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-6) var(--space-4);
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+/* Ícones principais dos cards */
+.contact-info .fa-2x {
+    color: var(--primary-color) !important;
+    transition: var(--transition-base);
+}
+
+/* Área de detalhes de contato */
+.contact-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: var(--space-3);
+}
+
+/* Containers flex dos detalhes individuais */
+.contact-details .d-flex {
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.4;
+    min-height: 24px;
+}
+
+/* Links de contato estilizados */
+.contact-details a {
+    transition: var(--transition-base);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-1px);
+}
+
+/* Texto dentro dos links para melhor alinhamento */
+.contact-details .text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+}
+
+/* Ícones nos detalhes de contato */
+.contact-details i {
+    font-size: 0.9rem;
+    min-width: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    height: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+/* Ajustes para responsividade dos cards */
+@media (max-width: 768px) {
+    .contact-info {
+        min-height: auto;
+        padding: var(--space-5) var(--space-3);
+        margin-bottom: var(--space-4);
+    }
+    
+    .contact-info h5 {
+        font-size: 1.125rem;
+        margin-bottom: var(--space-3);
+    }
+    
+    .contact-details {
+        margin-bottom: var(--space-2);
+    }
+    
+    .contact-details a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Hover específico para os novos cards */
+.contact-info:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--elevation-lg);
+}
+
+.contact-info:hover .fa-2x {
+    transform: scale(1.15);
+    color: var(--primary-dark) !important;
+}
+
+/* CTA discreto de orçamentos */
+.contact-cta-discrete {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-base);
+}
+
+.contact-cta-discrete:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-md);
+    border-color: var(--primary-light);
+}
+
+.contact-cta-discrete h6 {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.contact-cta-discrete .btn-sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
 }
