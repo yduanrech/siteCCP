@@ -361,57 +361,51 @@ p {
    =================================== */
 
 .modern-navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: var(--gradient-hero) !important;
     backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--gray-200);
-    box-shadow: var(--elevation-sm);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: var(--elevation-md);
     transition: var(--transition-smooth);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: var(--z-fixed);
-    padding: var(--space-3) 0;
+    padding: var(--space-2) 0;
 }
 
 .modern-navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: var(--elevation-md);
+    background: var(--gradient-hero) !important;
+    box-shadow: var(--elevation-lg);
     backdrop-filter: blur(25px) saturate(200%);
 }
 
 .modern-navbar .navbar-brand {
     font-family: 'Bahnschrift', sans-serif;
     font-weight: 700;
-    font-size: 1.75rem;
-    color: var(--text-primary) !important;
-    transition: var(--transition-base);
+    font-size: 1.5rem;
+    color: var(--white) !important;
     display: flex;
     align-items: center;
     text-decoration: none !important;
+    padding: 0.5rem 0;
 }
 
 .modern-navbar .navbar-brand:hover {
-    color: var(--text-primary) !important;
-    transform: none;
+    color: var(--white) !important;
 }
 
 .modern-navbar .navbar-brand img {
     filter: none !important;
     background: none !important;
     border-radius: 0 !important;
-    transition: var(--transition-base);
     margin-right: var(--space-3);
-}
-
-.modern-navbar .navbar-brand:hover img {
-    transform: none;
 }
 
 .modern-navbar .navbar-nav .nav-link {
     font-family: 'Bahnschrift', sans-serif;
     font-weight: 500;
     font-size: 1.1rem;
-    color: var(--text-secondary) !important;
+    color: rgba(255,255,255,0.9) !important;
     transition: var(--transition-base);
     padding: var(--space-3) var(--space-4) !important;
     margin: 0 var(--space-1);
@@ -427,15 +421,15 @@ p {
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--gradient-hero);
+    background: var(--white);
     transition: var(--transition-base);
     transform: translateX(-50%);
     border-radius: var(--radius-full);
 }
 
 .modern-navbar .navbar-nav .nav-link:hover {
-    color: var(--primary-color) !important;
-    background: var(--gray-50);
+    color: var(--white) !important;
+    background: rgba(255,255,255,0.1);
     transform: translateY(-1px);
 }
 
@@ -444,8 +438,8 @@ p {
 }
 
 .modern-navbar .navbar-nav .nav-link.active {
-    color: var(--primary-color) !important;
-    background: var(--gray-100);
+    color: var(--white) !important;
+    background: rgba(255,255,255,0.15);
     font-weight: 600;
 }
 
@@ -519,6 +513,33 @@ p {
     font-weight: 600;
     margin: var(--space-1) var(--space-2);
     border-radius: var(--radius-lg);
+}
+
+/* Dropdown hover - abre ao passar o mouse */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-top: 0;
+}
+
+.navbar-nav .dropdown-menu {
+    margin-top: 0;
+    border-top: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Mantém o dropdown aberto quando mouse está sobre ele */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu,
+.navbar-nav .dropdown-menu:hover {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* ===================================
