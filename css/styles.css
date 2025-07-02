@@ -370,7 +370,7 @@ p {
     top: 0;
     width: 100%;
     z-index: var(--z-fixed);
-    padding: var(--space-2) 0;
+    padding: var(--space-3) 0;
 }
 
 .modern-navbar.scrolled {
@@ -382,7 +382,7 @@ p {
 .modern-navbar .navbar-brand {
     font-family: 'Bahnschrift', sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--text-primary) !important;
     transition: var(--transition-base);
     display: flex;
@@ -399,22 +399,18 @@ p {
     filter: none !important;
     background: none !important;
     border-radius: 0 !important;
-    padding: var(--space-2);
-    box-shadow: var(--elevation-sm);
     transition: var(--transition-base);
     margin-right: var(--space-3);
-    border: 2px solid var(--gray-100);
 }
 
 .modern-navbar .navbar-brand:hover img {
-    box-shadow: var(--elevation-md);
     transform: scale(1.05);
-    border-color: var(--primary-color);
 }
 
 .modern-navbar .navbar-nav .nav-link {
     font-family: 'Bahnschrift', sans-serif;
     font-weight: 500;
+    font-size: 1.1rem;
     color: var(--text-secondary) !important;
     transition: var(--transition-base);
     padding: var(--space-3) var(--space-4) !important;
@@ -536,7 +532,7 @@ p {
     position: relative;
     overflow: hidden;
     background: var(--gradient-subtle);
-    padding-top: 100px;
+    padding-top: 110px;
     padding-bottom: var(--space-20);
 }
 
@@ -577,14 +573,13 @@ p {
 .hero-banner-carimbos,
 .hero-banner-crachas,
 .hero-banner-outros {
-    background: var(--gradient-hero);
-    min-height: 100vh;
+    background: var(--gradient-hero);    min-height: 100vh;
     display: flex;
     align-items: center;
     color: var(--white);
     position: relative;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .hero-banner::before,
@@ -1158,19 +1153,18 @@ p {
     .hero-section {
         min-height: 85vh;
         text-align: center;
-        padding-top: 100px;
+        padding-top: 110px;
     }
     
     .section-title {
         font-size: 2rem;
     }
-    
-    .modern-navbar .navbar-brand {
-        font-size: 1.25rem;
+      .modern-navbar .navbar-brand {
+        font-size: 1.5rem;
     }
     
     .modern-navbar .navbar-brand img {
-        height: 35px;
+        height: 45px;
     }
     
     .card:hover,
