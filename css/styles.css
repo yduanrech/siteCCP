@@ -2895,3 +2895,25 @@ a[href^="#"] {
     align-items: center;
     width: 100%;
 }
+
+/* ===================================
+   VALUE PROPOSITION STYLES
+   =================================== */
+
+/* Evita quebra de linha nos títulos da proposta de valor */
+.value-proposition h6 {
+    white-space: nowrap;
+    font-size: 0.95rem; /* Reduz ligeiramente o tamanho se necessário */
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .value-proposition h6 {
+        white-space: normal; /* Permite quebra em telas móveis */
+        font-size: 0.9rem;
+    }
+    
+    .value-proposition .col-4 {
+        margin-bottom: 1rem;
+    }
+}
