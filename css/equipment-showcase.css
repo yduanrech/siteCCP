@@ -42,6 +42,7 @@
     content: '';
     position: absolute;
     top: 0;
+}
 .equipment-card img {
     width: 100%;
     height: 100%;
@@ -53,6 +54,7 @@
     will-change: transform;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08));
     opacity: 0.95;
+}
 .equipment-overlay {
     position: absolute;
     bottom: 0;
@@ -98,6 +100,7 @@
     color: var(--white);
     font-size: 1.1rem;
     transform: translateY(5px);
+}
 .equipment-card:hover {
     transform: translateY(-12px) scale(1.03);
     box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);

@@ -41,5 +41,12 @@
 - Padronizado o design para manter a identidade visual do site
 - Documentação em `ATUALIZACAO-CARDS-CONTATO.md`
 
+### 7. Atualização do footer
+- Aumentado o tamanho da logo do footer em 80% (de 40px para 72px)
+- Alterados os títulos das seções do footer para branco
+- Padronizados os ícones de contato para branco (mantendo o WhatsApp verde)
+- Melhorado o contraste e legibilidade do footer
+- Documentação em `ATUALIZACAO-FOOTER.md`
+
 ---
 *Atualização realizada em 2 de julho de 2025*
