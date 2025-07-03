@@ -1,0 +1,124 @@
+/* Estilos para os cards de contato - Versão 2025 Moderna */
+/* Criado em 2 de julho de 2025 */
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-card .icon-container {
+    margin-bottom: var(--space-3);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-card:hover .icon-container {
+    background: rgba(37, 99, 235, 0.1);
+    transform: scale(1.05);
+}
+
+.contact-card .fa-2x {
+    color: var(--primary-color);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-card h5 {
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    position: relative;
+    padding-bottom: var(--space-2);
+    color: var(--text-primary);
+}
+
+.contact-card h5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: #2563EB;
+}
+
+.contact-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: var(--space-3);
+}
+
+.contact-card .text-tertiary {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 0.01em;
+    font-weight: 300;
+}
+
+.contact-card a {
+    transition: all 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        min-height: 280px;
+        padding: var(--space-4) var(--space-3);
+    }
+    
+    .contact-card .icon-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .contact-card .fa-2x {
+        font-size: 1.5em;
+    }
+}

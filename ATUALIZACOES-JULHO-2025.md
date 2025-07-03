@@ -33,5 +33,13 @@
 - Implementada grade responsiva para os cards de equipamentos
 - Documentação em `CORRECAO-SECAO-SOBRE.md`
 
+### 6. Padronização dos cards de contato
+- Criados novos cards para informações de contato no mesmo estilo dos cartões de métricas
+- Adicionados círculos com ícones para destaque visual
+- Implementado efeito de hover elegante e consistente com os outros elementos do site
+- Adicionadas linhas decorativas sob os títulos
+- Padronizado o design para manter a identidade visual do site
+- Documentação em `ATUALIZACAO-CARDS-CONTATO.md`
+
 ---
 *Atualização realizada em 2 de julho de 2025*
