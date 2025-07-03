@@ -7,11 +7,15 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <!-- Custom CSS -->    <link rel="stylesheet" href="css/styles.css">    <link rel="stylesheet" href="css/equipment-showcase-new.css">
+    <link rel="stylesheet" href="css/about-section.css">
+    <link rel="stylesheet" href="css/modern-effects.css">
+    <link rel="stylesheet" href="css/contact-cards.css">
+    <link rel="stylesheet" href="css/footer-updates.css">
 </head>
-<body>    <!-- Navigation -->    <nav class="navbar navbar-expand-lg navbar-dark fixed-top modern-navbar">
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top modern-navbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#home">
                 <img src="images/logo-ccp-branca-300px.png" alt="Centro de Cópias" height="45" class="me-3">
@@ -52,82 +56,75 @@
     </nav>    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
-            <div class="row align-items-center min-vh-100">
+            <div class="row align-items-center h-100">
                 <div class="col-lg-7">
                     <div class="hero-content">
-                        <h1 class="display-3 fw-bold mb-4">
-                            <span class="text-gradient">Preço justo</span>, serviços <span class="text-brand">rápidos</span> e <span class="text-gradient">perfeitos!</span>
-                        </h1>
-                        <p class="lead mb-5">
-                            Há mais de <strong>20 anos no mercado</strong>, trabalhamos com todos os segmentos gráficos, 
-                            produzindo materiais de qualidade com o <strong>melhor prazo, preço e atendimento</strong> da região.                        </p>                        <!-- Benefícios principais -->
-                        <div class="row g-3 mb-5">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Entrega Rápida</h6>
-                                        <small class="text-tertiary">Serviço expresso disponível</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                        <i class="fas fa-award"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Qualidade Garantida</h6>
-                                        <small class="text-tertiary">Equipamentos modernos</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                        <i class="fas fa-dollar-sign"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Preço Justo</h6>
-                                        <small class="text-tertiary">Valores competitivos</small>
+                        <!-- Badge profissional -->
+                        <div class="hero-badge mb-4">
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">
+                                <i class="fas fa-award me-2"></i>20+ Anos de Experiência
+                            </span>
+                        </div>
+                        
+                        <h1 class="display-3 fw-bold mb-4 hero-title">
+                            Soluções Gráficas
+                            <span class="text-gradient d-block">Profissionais</span>
+                        </h1>                            <p class="lead mb-5 text-secondary">
+                            Do projeto à entrega, oferecemos <strong>qualidade excepcional</strong> 
+                            e <strong>entregas pontuais</strong> para todas as suas necessidades gráficas.
+                        </p>
+                        
+                        <!-- Proposta de valor única -->
+                        <div class="value-proposition mb-5">
+                            <div class="row g-4">                                <div class="col-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="value-icon me-3">
+                                            <i class="fas fa-dollar-sign text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Preço Justo</h6>
+                                            <small class="text-muted">Valores competitivos</small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-1 fw-bold">Atendimento Personalizado</h6>
-                                        <small class="text-tertiary">Equipe especializada</small>
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="value-icon me-3">
+                                            <i class="fas fa-medal text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Qualidade Premium</h6>
+                                            <small class="text-muted">Equipamentos modernos</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="d-flex flex-wrap gap-3">
-                            <a href="#servicos" class="btn btn-primary btn-lg modern-btn">
-                                <i class="fas fa-arrow-down me-2"></i>Nossos Serviços
+                        <!-- CTA principal único e claro -->
+                        <div class="hero-cta">
+                            <a href="https://wa.me/5548999897021?text=Olá! Gostaria de solicitar um orçamento." 
+                               class="btn btn-primary btn-lg me-3 hero-cta-primary" target="_blank">
+                                <i class="fab fa-whatsapp me-2"></i>Solicitar Orçamento Agora
                             </a>
-                            <a href="#contato" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-phone me-2"></i>Solicitar Orçamento
+                            <a href="#servicos" class="btn btn-outline-primary btn-lg hero-cta-secondary">
+                                <i class="fas fa-arrow-down me-2"></i>Ver Serviços
                             </a>
                         </div>
                     </div>
                 </div>                <div class="col-lg-5">
-                    <div class="text-center">
-                        <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" class="img-fluid" style="max-width: 350px; opacity: 0.8; animation: none; transform: none; position: static;">
+                    <div class="hero-image">
+                        <img src="images/logo-CCP-transparente.png" alt="Centro de Cópias" class="img-fluid hero-logo">
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Services Section -->
+    </section>
+
+    <!-- Services Section -->
     <section id="servicos" class="modern-section modern-section-gray">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center">
                 <h2 class="section-title">Serviços Personalizados</h2>
                 <p class="section-subtitle">
                     Nossa equipe de profissionais é capacitada para desenvolver todo o trabalho desde a criação, 
@@ -135,239 +132,247 @@
                 </p>
             </div>
             
-            <div class="row g-4">                <!-- Plotagem de Engenharia -->
+            <div class="row g-4">
+                <!-- Plotagem de Engenharia -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card service-card h-100">
+                    <div class="card service-card service-card-plotagem h-100">
                         <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-drafting-compass"></i>
+                            <div class="service-icon-container mb-4">
+                                <div class="service-icon">
+                                    <i class="fas fa-drafting-compass"></i>
+                                </div>
                             </div>
                             <h5 class="card-title fw-bold mb-3">Plotagem de Engenharia</h5>
                             <p class="card-text text-secondary mb-4">
-                                Projetos técnicos impressos com <strong>precisão milimétrica</strong>. 
-                                Ideal para arquitetos, engenheiros e profissionais da construção.
+                                Projetos técnicos com <strong>precisão milimétrica</strong>. 
+                                Formatos até A0 para arquitetos e engenheiros.
                             </p>
-                            <ul class="list-unstyled text-start small mb-4">
-                                <li><i class="fas fa-check text-primary me-2"></i>Formatos até A0</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Qualidade profissional</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Entrega rápida</li>
-                            </ul>
-                            <a href="plotagem.html" class="btn btn-primary modern-btn">Ver Detalhes</a>
+                            <div class="service-features mb-4">
+                                <span class="feature-pill">Até A0</span>
+                                <span class="feature-pill">Alta Precisão</span>
+                                <span class="feature-pill">Entrega Rápida</span>
+                            </div>
+                            <a href="plotagem.html" class="btn btn-primary modern-btn w-100">
+                                Ver Detalhes <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Pulseiras de Festa -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card service-card h-100">
+                    <div class="card service-card service-card-pulseiras h-100">
                         <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-ticket-alt"></i>
+                            <div class="service-icon-container mb-4">
+                                <div class="service-icon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                </div>
                             </div>
                             <h5 class="card-title fw-bold mb-3">Pulseiras de Festa</h5>
                             <p class="card-text text-secondary mb-4">
                                 <strong>Controle de acesso</strong> prático e personalizado para seus eventos. 
                                 Material resistente e designs exclusivos.
                             </p>
-                            <ul class="list-unstyled text-start small mb-4">
-                                <li><i class="fas fa-check text-primary me-2"></i>100% personalizadas</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Material resistente</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Cores variadas</li>
-                            </ul>
-                            <a href="pulseiras.html" class="btn btn-primary modern-btn">Ver Detalhes</a>
+                            <div class="service-features mb-4">
+                                <span class="feature-pill">Personalizadas</span>
+                                <span class="feature-pill">Resistentes</span>
+                                <span class="feature-pill">Cores Variadas</span>
+                            </div>
+                            <a href="pulseiras.html" class="btn btn-primary modern-btn w-100">
+                                Ver Detalhes <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Impressões -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card service-card h-100">
+                    <div class="card service-card service-card-impressoes h-100">
                         <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-print"></i>
-                            </div>                            <h5 class="card-title fw-bold mb-3">Impressões A4/A3</h5>
+                            <div class="service-icon-container mb-4">
+                                <div class="service-icon">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">Impressões A4/A3</h5>
                             <p class="card-text text-secondary mb-4">
                                 <strong>Documentos profissionais</strong> com cores vívidas e textos nítidos. 
-                                Perfeito para relatórios, apresentações e materiais corporativos.
+                                Perfeito para relatórios e apresentações.
                             </p>
-                            <ul class="list-unstyled text-start small mb-4">
-                                <li><i class="fas fa-check text-primary me-2"></i>Laser colorido e P&B</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Papel de qualidade</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Preços acessíveis</li>
-                            </ul>
-                            <a href="impressoes.html" class="btn btn-primary modern-btn">Ver Detalhes</a>
+                            <div class="service-features mb-4">
+                                <span class="feature-pill">Laser Colorido</span>
+                                <span class="feature-pill">Papel Premium</span>
+                                <span class="feature-pill">Preço Justo</span>
+                            </div>
+                            <a href="impressoes.html" class="btn btn-primary modern-btn w-100">
+                                Ver Detalhes <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Carimbos -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card service-card h-100">
+                    <div class="card service-card service-card-carimbos h-100">
                         <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-stamp"></i>
+                            <div class="service-icon-container mb-4">
+                                <div class="service-icon">
+                                    <i class="fas fa-stamp"></i>
+                                </div>
                             </div>
                             <h5 class="card-title fw-bold mb-3">Carimbos</h5>
                             <p class="card-text text-secondary mb-4">
                                 <strong>Autenticação oficial</strong> para seus documentos. 
-                                Fabricação rápida com material durável e impressão nítida.
+                                Fabricação rápida com material durável.
                             </p>
-                            <ul class="list-unstyled text-start small mb-4">
-                                <li><i class="fas fa-check text-primary me-2"></i>Personalizados</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Material durável</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Entrega rápida</li>
-                            </ul>
-                            <a href="carimbos.html" class="btn btn-primary modern-btn">Ver Detalhes</a>
+                            <div class="service-features mb-4">
+                                <span class="feature-pill">Personalizados</span>
+                                <span class="feature-pill">Material Durável</span>
+                                <span class="feature-pill">Entrega Express</span>
+                            </div>
+                            <a href="carimbos.html" class="btn btn-primary modern-btn w-100">
+                                Ver Detalhes <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Crachás -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card service-card h-100">
+                    <div class="card service-card service-card-crachas h-100">
                         <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-id-card"></i>
+                            <div class="service-icon-container mb-4">
+                                <div class="service-icon">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
                             </div>
                             <h5 class="card-title fw-bold mb-3">Crachás</h5>
                             <p class="card-text text-secondary mb-4">
                                 <strong>Identificação profissional</strong> para empresas e eventos. 
                                 Design moderno com acabamento de qualidade.
                             </p>
-                            <ul class="list-unstyled text-start small mb-4">
-                                <li><i class="fas fa-check text-primary me-2"></i>Design profissional</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Diversos modelos</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Cordões inclusos</li>
-                            </ul>
-                            <a href="crachas.html" class="btn btn-primary modern-btn">Ver Detalhes</a>
+                            <div class="service-features mb-4">
+                                <span class="feature-pill">Design Profissional</span>
+                                <span class="feature-pill">Diversos Modelos</span>
+                                <span class="feature-pill">Cordões Inclusos</span>
+                            </div>
+                            <a href="crachas.html" class="btn btn-primary modern-btn w-100">
+                                Ver Detalhes <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
-                </div>                <!-- Outros Serviços -->
+                </div>
+
+                <!-- Outros Serviços -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card service-card h-100">
+                    <div class="card service-card service-card-outros h-100">
                         <div class="card-body text-center p-4">
-                            <div class="service-icon
-                            ">
-                                <i class="fas fa-plus"></i>
+                            <div class="service-icon-container mb-4">
+                                <div class="service-icon">
+                                    <i class="fas fa-plus"></i>
+                                </div>
                             </div>
                             <h5 class="card-title fw-bold mb-3">Outros Serviços</h5>
                             <p class="card-text text-secondary mb-4">
                                 <strong>Soluções completas</strong> para suas necessidades. 
-                                Plastificação, encadernação, scanner e muito mais.
+                                Plastificação, encadernação e muito mais.
                             </p>
-                            <ul class="list-unstyled text-start small mb-4">
-                                <li><i class="fas fa-check text-primary me-2"></i>Plastificação</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Encadernações</li>
-                                <li><i class="fas fa-check text-primary me-2"></i>Scanner até A0</li>
-                            </ul>
-                            <a href="outros-servicos.html" class="btn btn-primary modern-btn">Ver Detalhes</a>
+                            <div class="service-features mb-4">
+                                <span class="feature-pill">Plastificação</span>
+                                <span class="feature-pill">Encadernações</span>
+                                <span class="feature-pill">Scanner A0</span>
+                            </div>
+                            <a href="outros-servicos.html" class="btn btn-primary modern-btn w-100">
+                                Ver Detalhes <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- About Section -->
+    </section>
+
+    <!-- About Section -->
     <section id="sobre" class="modern-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="section-header text-start mb-5">
-                        <h2 class="section-title" style="text-align: left;">
-                            Empresas que confiam em nosso trabalho
-                        </h2>
-                        <p class="section-subtitle" style="text-align: left; margin: 0;">
-                            Nos orgulhamos de oferecer um serviço personalizado e de exceder as expectativas 
-                            de nossos clientes. Temos um histórico comprovado de sucesso e estamos 
-                            confiantes de que podemos ajudá-lo a atingir seus objetivos também.
-                        </p>
-                    </div>
-                    
-                    <!-- Stats Cards -->
-                    <div class="row g-4 mb-5">
-                        <div class="col-6">
-                            <div class="text-center p-4 rounded-xl bg-light">
-                                <h3 class="display-6 fw-bold text-brand mb-2">20+</h3>
-                                <p class="mb-0 text-secondary">Anos de experiência</p>
-                            </div>
+                    <div class="about-content">
+                        <div class="section-header text-start mb-5">
+                            <span class="badge bg-primary bg-opacity-10 text-primary mb-3">
+                                Sobre Nós
+                            </span>                            <h2 class="section-title text-start">
+                                Por que <span class="text-gradient">100+ empresas</span>
+                                confiam em nós?
+                            </h2>
+                            <p class="section-subtitle text-start">
+                                Duas décadas de experiência transformando ideias em 
+                                realidade gráfica com excelência e pontualidade.
+                            </p>
                         </div>
-                        <div class="col-6">
-                            <div class="text-center p-4 rounded-xl bg-light">
-                                <h3 class="display-6 fw-bold text-brand mb-2">500+</h3>
-                                <p class="mb-0 text-secondary">Clientes satisfeitos</p>
-                            </div>
-                        </div>                    </div>                    <!-- Benefícios principais -->
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                    <i class="fas fa-cogs"></i>
+                          <!-- Métricas de credibilidade -->
+                        <div class="credibility-metrics mb-5">
+                            <div class="row g-4">
+                                <div class="col-4">
+                                    <div class="metric-card premium-effect">
+                                        <h3 class="metric-number">20+</h3>
+                                        <p class="metric-label">Anos</p>
+                                    </div>
+                                </div>                                <div class="col-4">
+                                    <div class="metric-card premium-effect">
+                                        <h3 class="metric-number">300+</h3>
+                                        <p class="metric-label">Clientes</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h6 class="mb-1 fw-bold">Equipamentos Modernos</h6>
-                                    <small class="text-tertiary">Tecnologia de ponta para resultados perfeitos</small>
+                                <div class="col-4">
+                                    <div class="metric-card premium-effect">
+                                        <h3 class="metric-number">98%</h3>
+                                        <p class="metric-label">Satisfação</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                    <i class="fas fa-medal"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-1 fw-bold">Qualidade Garantida</h6>
-                                    <small class="text-tertiary">Comprometimento com a excelência em cada serviço</small>
-                                </div>
+                        
+                          <!-- Diferenciais competitivos -->
+                        <div class="competitive-advantages mb-5">
+                            <div class="advantage-item premium-effect">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span><strong>Equipamentos de última geração</strong> - Tecnologia que garante qualidade superior</span>
+                            </div>
+                            <div class="advantage-item premium-effect">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span><strong>Equipe especializada</strong> - Profissionais com décadas de experiência</span>
+                            </div>                            <div class="advantage-item premium-effect">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span><strong>Pontualidade garantida</strong> - Comprometimento com suas deadlines</span>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <div class="feature-icon me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                    <i class="fas fa-handshake"></i>
-                                </div>
-                                <div>
-                                    <h6 class="mb-1 fw-bold">Atendimento Especializado</h6>
-                                    <small class="text-tertiary">Equipe qualificada e atendimento personalizado</small>
-                                </div>
+                        <a href="#contato" class="btn btn-primary btn-lg">
+                            <i class="fas fa-handshake me-2"></i>Seja Nosso Parceiro
+                        </a>
+                    </div>                </div>                <div class="col-lg-6">
+                    <div class="showcase-grid">
+                        <div class="equipment-card premium-effect">
+                            <img src="images/Impressora_Konica_C458.png" alt="Konica Minolta C458" class="img-fluid">
+                            <div class="equipment-info">
+                                <h6>Multifuncional Premium</h6>
+                                <p>Alta performance e qualidade</p>
                             </div>
                         </div>
-                    </div>
-                      <a href="#contato" class="btn btn-primary btn-lg modern-btn">
-                        <i class="fas fa-user-plus me-2"></i>Seja nosso cliente
-                    </a>
-                </div>                <div class="col-lg-6">
-                    <!-- Galeria de equipamentos moderna -->
-                    <div class="row g-4">
-                        <div class="col-6">
-                            <div class="equipment-gallery-card">
-                                <img src="images/Plotter_EPSON_T3170.png" alt="Plotter Epson" class="img-fluid">
-                                <div class="mt-2">
-                                    <small class="text-muted fw-semibold">Impressão de Pequenos e Médios Formatos
-
-</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="equipment-gallery-card">
-                                <img src="images/Plotter_HP_T2500.png" alt="Plotter HP" class="img-fluid">
-                                <div class="mt-2">
-                                    <small class="text-muted fw-semibold">Impressão de Grandes Formatos e Projetos</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <div class="equipment-gallery-card" style="padding: 1.5rem !important;">
-                                <img src="images/Impressora_Konica_C458.png" alt="Impressora Konica" class="img-fluid" style="max-height: 250px !important;">
-                                <div class="mt-3">
-                                    <small class="text-muted fw-semibold">Cópias e Impressão Multifuncional de Alta Performance</small>
-                                </div>
+                        <div class="equipment-card premium-effect">
+                            <img src="images/Plotter_HP_T2500.png" alt="HP T2500" class="img-fluid">
+                            <div class="equipment-info">
+                                <h6>Plotagem de Grandes Formatos</h6>
+                                <p>Ideal para projetos A0</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Contact Section -->
+    </section>
+
+    <!-- Contact Section -->
     <section id="contato" class="modern-section modern-section-gray">
         <div class="container">
             <div class="section-header">
@@ -378,14 +383,17 @@
             </div>
               <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="row g-4">                        <!-- Telefone -->
+                    <div class="row g-4">
+                        <!-- Telefone -->
                         <div class="col-md-4">
-                            <div class="contact-info hover-lift">
-                                <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
-                                <h5 class="fw-bold">Telefone Comercial</h5>
+                            <div class="contact-card premium-effect">
+                                <div class="icon-container">
+                                    <i class="fas fa-phone fa-2x"></i>
+                                </div>
+                                <h5>Telefone Comercial</h5>
                                 <div class="contact-details">
                                     <div class="d-flex align-items-center justify-content-center mb-2">
-                                        <i class="fab fa-whatsapp text-success me-2"></i>
+                                        <i class="fab fa-whatsapp text-primary me-2"></i>
                                         <a href="https://wa.me/5548999897021" class="text-decoration-none text-secondary fw-semibold" target="_blank">(48) 9 9989-7021</a>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-center mb-3">
@@ -397,11 +405,14 @@
                                 <small class="text-tertiary d-block">Sábado - 08h às 12h</small>
                             </div>
                         </div>
-                          <!-- E-mail -->
+                        
+                        <!-- E-mail -->
                         <div class="col-md-4">
-                            <div class="contact-info hover-lift">
-                                <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
-                                <h5 class="fw-bold">E-mail Corporativo</h5>
+                            <div class="contact-card premium-effect">
+                                <div class="icon-container">
+                                    <i class="fas fa-envelope fa-2x"></i>
+                                </div>
+                                <h5>E-mail Corporativo</h5>
                                 <div class="contact-details">
                                     <div class="d-flex align-items-center justify-content-center mb-3">
                                         <i class="fas fa-at text-primary me-2"></i>
@@ -412,11 +423,14 @@
                                 <small class="text-tertiary d-block">Orçamentos e informações</small>
                             </div>
                         </div>
-                          <!-- Endereço -->
+                        
+                        <!-- Endereço -->
                         <div class="col-md-4">
-                            <div class="contact-info hover-lift">
-                                <i class="fas fa-map-marker-alt fa-2x mb-3 text-primary"></i>
-                                <h5 class="fw-bold">Localização</h5>
+                            <div class="contact-card premium-effect">
+                                <div class="icon-container">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                </div>
+                                <h5>Localização</h5>
                                 <div class="contact-details">
                                     <div class="d-flex align-items-center justify-content-center mb-3">
                                         <i class="fas fa-location-dot text-primary me-2"></i>
@@ -430,7 +444,8 @@
                                     </div>
                                 </div>
                                 <small class="text-tertiary">Próximo à Caixa Econômica</small>
-                                <small class="text-tertiary d-block">Estacionamento disponível</small>                            </div>
+                                <small class="text-tertiary d-block">Estacionamento disponível</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -458,16 +473,102 @@
                 </div>
             </div>
         </div>
-    </section>    <!-- Footer -->
-    <footer class="bg-primary text-white py-5">
+    </section>
+
+    <!-- Footer -->
+    <footer class="professional-footer">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h5 class="fw-bold mb-2">Centro de Cópias</h5>
-                    <p class="mb-0 opacity-75">Qualidade e Rapidez em Serviços Gráficos</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <img src="images/logo-ccp-branca-300px.png" alt="Centro de Cópias" height="40" class="mb-3">
+                        <h5 class="fw-bold text-white mb-3">Centro de Cópias</h5>
+                        <p class="text-light opacity-75 mb-3">
+                            Há 20 anos transformando suas ideias em realidade 
+                            gráfica com qualidade e pontualidade.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://wa.me/5548999897021" class="social-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:ccp@centrodecopias.net.br" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+554836584053" class="social-link">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0 opacity-75">&copy; 2025 Centro de Cópias. Todos os direitos reservados.</p>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="footer-title">Serviços</h6>
+                    <ul class="footer-links">
+                        <li><a href="plotagem.html">Plotagem</a></li>
+                        <li><a href="impressoes.html">Impressões</a></li>
+                        <li><a href="carimbos.html">Carimbos</a></li>
+                        <li><a href="crachas.html">Crachás</a></li>
+                        <li><a href="pulseiras.html">Pulseiras</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="footer-title">Contato Rápido</h6>                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            <a href="https://wa.me/5548999897021" target="_blank">(48) 9 9989-7021</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone text-primary me-2"></i>
+                            <a href="tel:+554836584053">(48) 3658-4053</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <a href="mailto:ccp@centrodecopias.net.br">ccp@centrodecopias.net.br</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="footer-title">Horário de Funcionamento</h6>
+                    <div class="opening-hours">
+                        <div class="hour-item">
+                            <span class="day">Seg - Sex</span>
+                            <span class="time">08h às 18h</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Sábado</span>
+                            <span class="time">08h às 12h</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Domingo</span>
+                            <span class="time">Fechado</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5548999897021?text=Olá! Gostaria de solicitar um orçamento." 
+                       class="btn btn-primary btn-sm mt-3 w-100" target="_blank">
+                        <i class="fab fa-whatsapp me-2"></i>Orçamento Rápido
+                    </a>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p class="copyright mb-0">
+                        &copy; 2025 Centro de Cópias. Todos os direitos reservados. 
+                        <span class="separator">|</span>
+                        Desenvolvido com excelência para Braço do Norte/SC
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="footer-badge">
+                        <span class="badge bg-success">
+                            <i class="fas fa-star me-1"></i>20 Anos de Confiança
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>

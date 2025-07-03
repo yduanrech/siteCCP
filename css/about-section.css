@@ -1,0 +1,192 @@
+/* Estilos para a seção Sobre Nós - Versão 2025 Moderna */
+
+/* Métricas de credibilidade */
+.metric-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.metric-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.metric-card:hover::before {
+    opacity: 1;
+}
+
+.metric-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
+    line-height: 1.1;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+    position: relative;
+    padding-top: var(--space-2);
+}
+
+.metric-label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: #2563EB;
+}
+
+/* Diferenciais competitivos */
+.competitive-advantages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.advantage-item {
+    display: flex;
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-left: 4px solid #10B981;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.advantage-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.advantage-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 25px rgba(16, 185, 129, 0.1);
+    border-left-width: 6px;
+}
+
+.advantage-item:hover::before {
+    opacity: 1;
+}
+
+.advantage-item i {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.advantage-item:hover i {
+    background: #10B981;
+    color: white;
+    transform: scale(1.1);
+}
+
+.advantage-item span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.advantage-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+    .metric-card {
+        margin-bottom: var(--space-4);
+    }
+    
+    .metric-number {
+        font-size: 2.5rem;
+    }
+    
+    .advantage-item {
+        padding: var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .metric-card {
+        transform: translateY(0);
+    }
+    
+    .metric-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .metric-number {
+        font-size: 2.2rem;
+    }
+    
+    .advantage-item {
+        padding: var(--space-3) var(--space-4);
+    }
+    
+    .advantage-item i {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+        margin-right: 12px;
+    }
+    
+    .advantage-item span {
+        font-size: 0.9rem;
+    }
+}

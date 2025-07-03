@@ -1,0 +1,135 @@
+/* Estilos para Equipment Showcase - Versão 2025 Moderna */
+/* Arquivo criado em 2 de julho de 2025 */
+
+.equipment-showcase {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    padding: var(--space-3);
+}
+
+.showcase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    height: 100%;
+    position: relative;
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.equipment-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.equipment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.equipment-card img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-bottom: var(--space-3);
+    padding: 5px;
+}
+
+.equipment-info {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.equipment-info h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: var(--space-2);
+}
+
+.equipment-info h6::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: #2563EB;
+}
+
+.equipment-info p {
+    margin: var(--space-1) 0 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+    font-weight: 300;
+}
+
+.equipment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.equipment-card:hover::before {
+    opacity: 1;
+}
+
+.equipment-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+    .showcase-grid {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .showcase-grid {
+        max-width: 280px;
+        gap: var(--space-4);
+    }
+    
+    .equipment-card img {
+        max-height: 220px;
+    }
+    
+    .equipment-info h6 {
+        font-size: 1rem;
+    }
+    
+    .equipment-info p {
+        font-size: 0.8rem;
+    }
+}

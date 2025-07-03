@@ -1,0 +1,209 @@
+/* Estilos para Equipment Showcase - Versão 2025 Moderna */
+.equipment-showcase {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    padding: var(--space-5);
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(37, 99, 235, 0.05);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-5);
+    height: 100%;
+    position: relative;
+    perspective: 1000px;
+}
+
+.equipment-card {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    height: 200px;
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    will-change: transform, box-shadow;
+}
+
+.equipment-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+.equipment-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: var(--space-4);
+    background: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateZ(10px) scale(0.95);
+    will-change: transform;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.08));
+    opacity: 0.95;
+}
+.equipment-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-4);
+    background: linear-gradient(to top, rgba(37, 99, 235, 0.95), rgba(37, 99, 235, 0.1) 80%, rgba(37, 99, 235, 0));
+    color: var(--white);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    transform: translateY(15px);
+    z-index: 3;
+    border-bottom-left-radius: var(--radius-xl);
+.equipment-overlay h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1.15rem;
+    transform: translateY(10px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+    opacity: 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.02em;
+}
+
+.equipment-overlay p {
+    margin: var(--space-2) 0 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.95);
+    transform: translateY(10px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+    opacity: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.01em;
+    font-weight: 300;
+}   opacity: 0;
+    transform: translateY(10px);
+}
+
+.equipment-overlay h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1.1rem;
+    transform: translateY(5px);
+}
+.equipment-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.18);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.equipment-card:hover::after {
+    opacity: 1;
+}
+
+.equipment-card:hover .equipment-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.equipment-card:hover .equipment-overlay h6,
+.equipment-card:hover .equipment-overlay p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.equipment-card:hover img {
+    transform: translateZ(20px) scale(1);
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12));
+    opacity: 1;
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+    .equipment-card {
+        height: 180px;
+    }
+    
+    .equipment-card.featured {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .equipment-card.featured {
+        grid-column: 1;
+        height: 200px;
+    }
+    
+    .equipment-card {
+        height: 160px;
+        margin-bottom: var(--space-3);
+    }
+    
+    .equipment-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.1) 90%);
+    }
+    
+    .equipment-overlay h6,
+    .equipment-overlay p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .equipment-card img {
+        padding: var(--space-3);
+        transform: translateZ(0) scale(1);
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.05));
+    }
+    
+    .equipment-overlay h6 {
+        font-size: 1rem;
+    }
+    
+    .equipment-overlay p {
+        font-size: 0.8rem;
+    }
+}   transform: scale(1.1) translateY(-5px);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipment-card.featured {
+        grid-column: 1;
+    }
+    
+    .equipment-card {
+        margin-bottom: var(--space-4);
+    }
+    
+    .equipment-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.1));
+    }
+    
+    .equipment-overlay h6,
+    .equipment-overlay p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
