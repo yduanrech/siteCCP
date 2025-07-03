@@ -482,11 +482,12 @@ p {
     border: none !important;
     border-radius: var(--radius-xl) !important;
     box-shadow: var(--elevation-lg) !important;
-    margin-top: var(--space-2) !important;
+    margin-top: 0 !important;
     padding: var(--space-3) 0 !important;
     overflow: hidden;
     border: 1px solid var(--gray-100) !important;
     min-width: 220px;
+    position: relative;
 }
 
 .modern-dropdown::before {
@@ -561,6 +562,7 @@ p {
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    display: block !important;
 }
 
 /* Mantém o dropdown aberto quando mouse está sobre ele */
@@ -570,6 +572,51 @@ p {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* Correção para permitir clique nos itens do dropdown */
+.navbar-nav .nav-item.dropdown {
+    position: relative;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu,
+.navbar-nav .nav-item.dropdown .dropdown-menu:hover {
+    pointer-events: auto;
+}
+
+/* Garante que o dropdown permaneça visível durante a transição do mouse */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+}
+
+/* Área de segurança para navegação com mouse */
+.navbar-nav .nav-item.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+    z-index: 999;
+}
+
+.navbar-nav .nav-item.dropdown:hover::after {
+    display: block;
 }
 
 /* ===================================
