@@ -4,6 +4,31 @@
    =================================== */
 
 /* ===================================
+   PADRONIZAÇÃO DE BADGES GLOBAL
+   Consistência entre Hero e About sections
+   =================================== */
+
+/* 
+   BADGES PADRONIZADOS - Aplicação Global
+   
+   Estilo unificado para tags de "20+ Anos de Experiência" (hero) 
+   e "Sobre Nós" (about) garantindo consistência visual.
+   
+   Classes afetadas:
+   - .hero-badge .badge
+   - .badge.bg-primary.bg-opacity-10.text-primary
+   
+   Propriedades padronizadas:
+   - font-size: 0.875rem (0.75rem no mobile)
+   - font-weight: 600
+   - padding: var(--space-2) var(--space-4)
+   - border-radius: var(--radius-full)
+   - background: rgba(37, 99, 235, 0.1)
+   - color: var(--primary-color)
+   - hover effects consistentes
+*/
+
+/* ===================================
    ABOUT SECTION COMPONENTS
    (Consolidado de about-section.css)
    =================================== */
@@ -95,29 +120,69 @@
     transition: var(--transition-smooth);
     border-left: 4px solid var(--primary-color);
     margin-bottom: var(--space-4);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    z-index: 1;
 }
 
 .advantage-item:hover {
     transform: translateX(8px);
-    box-shadow: var(--elevation-md);
-    background: var(--gray-50);
+    box-shadow: var(--elevation-lg);
+    border-color: var(--primary-color);
 }
 
-.advantage-item i {
-    color: var(--success-color);
+.advantage-item:hover::before {
+    opacity: 1;
+}
+
+.advantage-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
     font-size: 1.25rem;
-    margin-right: var(--space-3);
     flex-shrink: 0;
+    transition: var(--transition-base);
 }
 
-.advantage-item span {
+.advantage-item:hover .advantage-icon {
+    transform: scale(1.1);
+    background: var(--primary-dark);
+}
+
+.advantage-content {
+    flex: 1;
+}
+
+.advantage-content h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    line-height: 1.3;
+}
+
+.advantage-content p {
     color: var(--text-secondary);
     line-height: 1.6;
-}
-
-.advantage-item strong {
-    color: var(--text-primary);
-    font-weight: 600;
+    margin: 0;
+    font-size: 0.95rem;
 }
 
 /* ===================================
@@ -125,23 +190,40 @@
    (Consolidado de equipment-showcase.css)
    =================================== */
 
+.equipment-showcase {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    padding: var(--space-3);
+}
+
 .showcase-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
-    max-width: 600px;
+    gap: var(--space-5);
+    height: 100%;
+    position: relative;
+    max-width: 330px;
+    margin: 0 auto;
 }
 
 .equipment-card {
-    background: var(--white);
-    border-radius: var(--radius-xl);
-    padding: var(--space-6);
-    box-shadow: var(--elevation-sm);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid var(--gray-200);
     position: relative;
+    border-radius: var(--radius-lg);
     overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .equipment-card::before {
@@ -151,16 +233,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 100%);
+    z-index: -1;
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .equipment-card img {
     width: 100%;
-    max-height: 250px;
+    max-height: 280px;
     object-fit: contain;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: var(--radius-md);
     margin-bottom: var(--space-3);
     padding: 5px;
 }
@@ -223,15 +307,12 @@
     background: var(--white);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
-    box-shadow: var(--elevation-sm);
+    text-align: center;
     transition: var(--transition-smooth);
     border: 1px solid var(--gray-200);
-    position: relative;
-    overflow: hidden;
-    text-align: center;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-card::before {
@@ -239,8 +320,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
     opacity: 0;
     transition: var(--transition-smooth);
@@ -279,85 +361,31 @@
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: var(--space-4);
-    position: relative;
-    z-index: 2;
+    font-size: 1.25rem;
 }
 
 .contact-details {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: var(--space-3);
-    position: relative;
-    z-index: 2;
-}
-
-.contact-details .d-flex {
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1.4;
-    min-height: 24px;
+    margin-bottom: var(--space-4);
 }
 
 .contact-details a {
-    transition: var(--transition-base);
-    font-size: 0.95rem;
-    line-height: 1.4;
-    display: flex;
-    align-items: center;
+    color: var(--text-secondary);
     text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition-base);
 }
 
 .contact-details a:hover {
-    color: var(--primary-color) !important;
-    transform: translateY(-1px);
-}
-
-.contact-details i {
     color: var(--primary-color);
-    margin-right: var(--space-2);
-}
-
-.text-tertiary {
-    color: var(--text-tertiary);
-    font-size: 0.875rem;
-    line-height: 1.4;
-    position: relative;
-    z-index: 2;
-}
-
-/* CTA Discreto para Orçamentos */
-.contact-cta-discrete {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4);
-    text-align: center;
-    margin-top: var(--space-8);
-}
-
-.contact-cta-discrete h6 {
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-bottom: var(--space-2);
-}
-
-.contact-cta-discrete p {
-    color: var(--text-secondary);
-    margin-bottom: var(--space-3);
-    font-size: 0.875rem;
 }
 
 /* ===================================
-   MODERN EFFECTS COMPONENTS
-   (Consolidado de modern-effects.css)
+   MODERN EFFECTS & ANIMATIONS
    =================================== */
 
 .premium-effect {
     position: relative;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: var(--transition-smooth);
 }
 
 .premium-effect:hover {
@@ -433,32 +461,16 @@
         font-size: 0.8rem;
     }
     
-    .contact-card {
-        margin-bottom: var(--space-6);
-    }
-    
-    .contact-details {
-        text-align: center;
-    }
-    
-    .advantage-item {
-        flex-direction: column;
-        text-align: center;
-        border-left: none;
-        border-top: 4px solid var(--primary-color);
-    }
-    
-    /* Métricas permanecem na mesma linha mesmo em mobile */
     .credibility-metrics .row {
-        gap: var(--space-1);
+        gap: var(--space-2);
     }
     
     .metric-card {
-        padding: var(--space-3) var(--space-1);
+        padding: var(--space-3) var(--space-2);
     }
     
     .metric-card .metric-number {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     
     .metric-card .metric-label {
@@ -467,20 +479,35 @@
 }
 
 @media (max-width: 576px) {
-    /* Mesmo em telas muito pequenas, manter na mesma linha */
     .credibility-metrics .row {
-        gap: var(--space-1);
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .credibility-metrics .col-4 {
+        flex: none;
+        max-width: none;
     }
     
     .metric-card {
-        padding: var(--space-2);
+        padding: var(--space-4);
     }
     
     .metric-card .metric-number {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
     
     .metric-card .metric-label {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
+    }
+    
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-4);
+    }
+    
+    .advantage-icon {
+        margin-bottom: var(--space-3);
     }
 }

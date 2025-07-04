@@ -1,5 +1,30 @@
 /* Estilos para a seção Sobre Nós - Versão 2025 Moderna */
 
+/* ===================================
+   STANDARDIZED BADGES - ABOUT SECTION
+   Complementa a padronização das tags do hero
+   =================================== */
+
+.about-content .badge.bg-primary.bg-opacity-10.text-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    padding: var(--space-2) var(--space-4) !important;
+    border-radius: var(--radius-full) !important;
+    border: none;
+    background: rgba(37, 99, 235, 0.1) !important;
+    color: var(--primary-color) !important;
+    margin-bottom: var(--space-3);
+    transition: var(--transition-base);
+}
+
+.about-content .badge.bg-primary.bg-opacity-10.text-primary:hover {
+    background: rgba(37, 99, 235, 0.15) !important;
+    transform: translateY(-1px);
+}
+
 /* Métricas de credibilidade */
 .metric-card {
     background: var(--white);
@@ -41,6 +66,7 @@
     font-size: 2.8rem;
     font-weight: 700;
     background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0;
@@ -187,6 +213,33 @@
     }
     
     .advantage-item span {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Badge responsivo mantém consistência com hero */
+    .about-content .badge.bg-primary.bg-opacity-10.text-primary {
+        font-size: 0.75rem !important;
+        padding: var(--space-1) var(--space-3) !important;
+    }
+    
+    .metric-card {
+        padding: var(--space-4) var(--space-3);
+    }
+    
+    .metric-number {
+        font-size: 2rem;
+    }
+    
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-4);
+    }
+    
+    .advantage-item i {
+        margin-right: 0;
+        margin-bottom: var(--space-2);
     }
 }

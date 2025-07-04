@@ -97,6 +97,10 @@
    HERO CONTENT
    =================================== */
 
+.hero-content {
+    text-align: left;
+}
+
 .hero-title {
     font-size: 3rem;
     font-weight: 700;
@@ -113,17 +117,48 @@
 }
 
 .hero-badge {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: var(--space-4);
+    width: 100%;
+}
+
+.hero-badge .badge {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-full);
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--white);
-    margin-bottom: var(--space-4);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+}
+
+/* ===================================
+   STANDARDIZED BADGES - Hero & About
+   Padronização das tags entre hero e about
+   =================================== */
+
+.hero-badge .badge,
+.badge.bg-primary.bg-opacity-10.text-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    padding: var(--space-2) var(--space-4) !important;
+    border-radius: var(--radius-full) !important;
+    border: none;
+    background: rgba(37, 99, 235, 0.1) !important;
+    color: var(--primary-color) !important;
+    margin-bottom: var(--space-3);
+    transition: var(--transition-base);
+}
+
+.hero-badge .badge:hover,
+.badge.bg-primary.bg-opacity-10.text-primary:hover {
+    background: rgba(37, 99, 235, 0.15) !important;
+    transform: translateY(-1px);
 }
 
 .hero-cta {
@@ -206,40 +241,20 @@
 
 .value-proposition .col-4 {
     padding-left: 0 !important;
-    padding-right: 8px !important;
+    padding-right: var(--space-3) !important;
+}
+
+.value-proposition .col-4:last-child {
+    padding-right: 0 !important;
 }
 
 .value-proposition h6 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
     white-space: nowrap;
-    font-size: 0.95rem;
-}
-
-.value-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.125rem;
-    flex-shrink: 0;
-}
-
-/* ===================================
-   FLOATING ELEMENTS
-   =================================== */
-
-.floating-element {
-    position: relative;
-    z-index: 3;
-}
-
-.floating-image {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* ===================================
@@ -251,6 +266,16 @@
         min-height: 100vh;
         padding-top: 100px;
         padding-bottom: var(--space-16);
+        text-align: left;
+    }
+    
+    .hero-content {
+        text-align: left;
+    }
+    
+    .hero-badge {
+        justify-content: flex-start;
+        text-align: left;
     }
     
     .hero-section .container {
@@ -260,10 +285,12 @@
     .hero-title {
         font-size: 2rem;
         line-height: 1.2;
+        text-align: left;
     }
     
     .hero-subtitle {
         font-size: 1.125rem;
+        text-align: left;
     }
     
     .hero-cta {
@@ -284,6 +311,7 @@
     
     .value-proposition .col-4 {
         margin-bottom: 1rem;
+        padding-right: var(--space-2) !important;
     }
     
     .hero-banner,
@@ -318,5 +346,12 @@
     .hero-cta-secondary {
         padding: var(--space-3) var(--space-6);
         font-size: 1rem;
+    }
+    
+    /* Badges responsivos mantêm consistência */
+    .hero-badge .badge,
+    .badge.bg-primary.bg-opacity-10.text-primary {
+        font-size: 0.75rem !important;
+        padding: var(--space-1) var(--space-3) !important;
     }
 }
