@@ -15,6 +15,13 @@
 
 .credibility-metrics .row {
     gap: var(--space-4);
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.credibility-metrics .col-4 {
+    flex: 1;
+    min-width: 0;
 }
 
 .metric-card {
@@ -28,6 +35,7 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    width: 100%;
 }
 
 .metric-card::before {
@@ -51,6 +59,24 @@
 
 .metric-card:hover::before {
     opacity: 1;
+}
+
+.metric-card .metric-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.metric-card .metric-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
 }
 
 /* Diferenciais competitivos */
@@ -100,11 +126,10 @@
    =================================== */
 
 .showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: var(--space-6);
     max-width: 600px;
-    margin: 0 auto;
 }
 
 .equipment-card {
@@ -357,9 +382,36 @@
    RESPONSIVE ADJUSTMENTS
    =================================== */
 
+/* Garantir que as métricas sempre fiquem na mesma linha */
+@media (max-width: 1200px) {
+    .credibility-metrics .row {
+        gap: var(--space-3);
+    }
+    
+    .metric-card {
+        padding: var(--space-4) var(--space-3);
+    }
+}
+
 @media (max-width: 992px) {
     .showcase-grid {
         max-width: 300px;
+    }
+    
+    .credibility-metrics .row {
+        gap: var(--space-2);
+    }
+    
+    .metric-card {
+        padding: var(--space-3) var(--space-2);
+    }
+    
+    .metric-card .metric-number {
+        font-size: 1.8rem;
+    }
+    
+    .metric-card .metric-label {
+        font-size: 0.8rem;
     }
 }
 
@@ -394,5 +446,41 @@
         text-align: center;
         border-left: none;
         border-top: 4px solid var(--primary-color);
+    }
+    
+    /* Métricas permanecem na mesma linha mesmo em mobile */
+    .credibility-metrics .row {
+        gap: var(--space-1);
+    }
+    
+    .metric-card {
+        padding: var(--space-3) var(--space-1);
+    }
+    
+    .metric-card .metric-number {
+        font-size: 1.5rem;
+    }
+    
+    .metric-card .metric-label {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Mesmo em telas muito pequenas, manter na mesma linha */
+    .credibility-metrics .row {
+        gap: var(--space-1);
+    }
+    
+    .metric-card {
+        padding: var(--space-2);
+    }
+    
+    .metric-card .metric-number {
+        font-size: 1.3rem;
+    }
+    
+    .metric-card .metric-label {
+        font-size: 0.7rem;
     }
 }
