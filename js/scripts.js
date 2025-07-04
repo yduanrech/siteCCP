@@ -199,16 +199,16 @@ class CentroCopias {
 
         // Highlight do menu ativo
         this.highlightActiveMenu();
-    }
-
-    /**
+    }    /**
      * Scroll suave para elemento
      */
     smoothScrollTo(targetId) {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
             const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
-            const targetPosition = targetElement.offsetTop - navHeight - 20;
+            // Aumenta significativamente o espaço para deixar mais visível a seção
+            const extraSpace = targetId === '#servicos' ? 150 : 20; // Muito mais espaço para seção de serviços
+            const targetPosition = targetElement.offsetTop - navHeight - extraSpace;
             
             window.scrollTo({
                 top: targetPosition,
