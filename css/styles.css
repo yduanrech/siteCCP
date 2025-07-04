@@ -1402,22 +1402,22 @@ section {
 
 /* Ajuste específico para scroll da seção de serviços - Responsivo */
 #servicos {
-    scroll-margin-top: 150px !important; /* Aumentado ainda mais para dar mais espaço */
-    padding-top: clamp(5rem, 12vw, 10rem) !important; /* Mais padding para afastar do topo */
+    scroll-margin-top: 90px;
+    padding-top: clamp(3rem, 8vw, 6rem) !important;
 }
 
 /* Responsividade do scroll offset */
 @media (max-width: 768px) {
     #servicos {
-        scroll-margin-top: 120px !important;
-        padding-top: clamp(4rem, 10vw, 8rem) !important;
+        scroll-margin-top: 70px;
+        padding-top: clamp(2rem, 6vw, 4rem) !important;
     }
 }
 
 @media (max-width: 576px) {
     #servicos {
-        scroll-margin-top: 100px !important;
-        padding-top: clamp(3rem, 8vw, 6rem) !important;
+        scroll-margin-top: 60px;
+        padding-top: clamp(1.5rem, 5vw, 3rem) !important;
     }
 }
 
@@ -2504,19 +2504,6 @@ a[href^="#"] {
 /* Navbar hide/show animation */
 .modern-navbar {
     transition: transform 0.3s ease-in-out !important;
-}
-
-/* Forçar scroll personalizado para seção de serviços */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Espaçamento adicional específico para seção de serviços */
-#servicos::before {
-    content: '';
-    display: block;
-    height: 100px; /* Espaço invisível antes da seção */
-    margin-top: -100px; /* Compensa o espaço para não afetar o layout */
 }
 
 /* Lazy loading shimmer effect já definido anteriormente */
