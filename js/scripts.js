@@ -264,21 +264,21 @@ class CentroCopias {
         
         // Scroll to top button
         this.updateScrollToTopButton(scrollY);
-    }
-
-    /**
+    }    /**
      * Atualiza navbar no scroll
      */
     updateNavbar(scrollY) {
-        const navbar = document.querySelector('.navbar');
+        const navbar = document.querySelector('.modern-navbar');
         if (navbar) {
-            if (scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(8, 151, 208, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            } else {
-                navbar.style.backgroundColor = '#0897d0';
-                navbar.style.backdropFilter = 'none';
-            }
+            // Navbar mantém o estilo base, sem mudanças visuais no scroll
+            // Removido: alterações de background que poderiam causar conflito
+            // if (scrollY > 50) {
+            //     navbar.style.backgroundColor = 'rgba(8, 151, 208, 0.95)';
+            //     navbar.style.backdropFilter = 'blur(10px)';
+            // } else {
+            //     navbar.style.backgroundColor = '#0897d0';
+            //     navbar.style.backdropFilter = 'none';
+            // }
         }
     }
 
@@ -665,23 +665,17 @@ class CentroCopias {
         if (!navbar) return;
 
         let lastScrollY = window.scrollY;
-        let ticking = false;
-
-        const updateNavbar = () => {
+        let ticking = false;        const updateNavbar = () => {
             const scrollY = window.scrollY;
             
-            if (scrollY > 100) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-
-            // Hide/show navbar on scroll
-            if (scrollY > lastScrollY && scrollY > 200) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
+            // Removido: Não adiciona mais a classe que altera o padding
+            // if (scrollY > 100) {
+            //     navbar.classList.add('navbar-scrolled');
+            // } else {
+            //     navbar.classList.remove('navbar-scrolled');
+            // }
+            
+            // Navbar sempre visível - removido o comportamento de ocultar
 
             lastScrollY = scrollY;
             ticking = false;
@@ -715,33 +709,10 @@ class CentroCopias {
         cards.forEach(card => {
             observer.observe(card);
         });
-    }
-
-    /**
-     * WhatsApp floating button
+    }    /**
+     * WhatsApp floating button - REMOVIDO
+     * Função removida pois o botão flutuante do WhatsApp não será mais utilizado
      */
-    addWhatsAppFloat() {
-        const whatsappFloat = document.createElement('a');
-        whatsappFloat.href = 'https://wa.me/5547999999999';
-        whatsappFloat.className = 'whatsapp-float';
-        whatsappFloat.innerHTML = '<i class="fab fa-whatsapp"></i>';
-        whatsappFloat.target = '_blank';
-        whatsappFloat.setAttribute('aria-label', 'Falar no WhatsApp');
-        
-        document.body.appendChild(whatsappFloat);
-
-        // Hide on scroll down, show on scroll up
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop && scrollTop > 300) {
-                whatsappFloat.style.transform = 'translateY(100px)';
-            } else {
-                whatsappFloat.style.transform = 'translateY(0)';
-            }
-            lastScrollTop = scrollTop;
-        });
-    }
 
     /**
      * Lazy loading para imagens
@@ -874,13 +845,12 @@ class CentroCopias {
 
     /**
      * Inicialização completa
-     */
-    initializeEnhancements() {
+     */    initializeEnhancements() {
         this.setupPageLoader();
         this.setupSmoothScroll();
         this.enhanceNavbar();
         this.animateCards();
-        this.addWhatsAppFloat();
+        // this.addWhatsAppFloat(); // Removido - botão flutuante do WhatsApp
         this.setupLazyLoading();
         this.setupFeedback();
         this.setupPerformanceMonitoring();

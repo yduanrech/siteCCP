@@ -304,8 +304,7 @@
    =================================== */
 
 .service-cta:focus,
-.whatsapp-cta:focus,
-.whatsapp-float:focus {
+.whatsapp-cta:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 4px;
     border-radius: var(--radius-lg);
