@@ -137,4 +137,10 @@
     --z-modal: 1050;
     --z-popover: 1060;
     --z-tooltip: 1070;
+
+    /* ===================================
+       OUTRAS VARIÁVEIS
+       =================================== */
+    
+    --navbar-height: 56px; /* Altura real da navbar para offset do hero (antes 90px) */
 }

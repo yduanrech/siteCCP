@@ -185,9 +185,8 @@
 /* Correção específica para telas entre 769px e 991px (tablets/desktop pequeno) */
 @media (min-width: 769px) and (max-width: 991px) {
     .hero-section {
-        padding-top: 160px !important; /* Padding específico para esta faixa */
         position: relative;
-        z-index: 1 !important; /* Reduzido para ficar abaixo da navbar */
+        z-index: 1 !important;
     }
     
     .hero-content {
@@ -208,7 +207,6 @@
 
 @media (max-width: 768px) {    /* CORREÇÃO HERO: Padding-top ajustado para telas médias - AUMENTADO */
     .hero-section {
-        padding-top: 180px !important; /* Aumentado significativamente para evitar sobreposição total */
         padding-bottom: var(--space-12);
         position: relative;
         z-index: 1 !important; /* Reduzido para ficar abaixo da navbar */
@@ -274,7 +272,6 @@
 @media (max-width: 576px) {
     /* CORREÇÃO HERO: Padding-top aumentado para telas muito pequenas - CORRIGIDO PARA S20 ULTRA */
     .hero-section {
-        padding-top: 200px !important; /* Aumentado significativamente para S20 Ultra (412x915) */
         padding-bottom: var(--space-12);
     }
     
@@ -362,38 +359,6 @@
         color: var(--white) !important;
         transform: none !important;
         padding: var(--space-2) var(--space-4) !important;
-    }      /* CORREÇÃO HERO: Padding-top adicional para evitar sobreposição com navbar expandida - AUMENTADO */
-    .hero-section {
-        padding-top: 180px !important; /* Aumentado significativamente para resolver problema em ~950px */
-    }
-      /* Badge com margem superior adicional para evitar sobreposição */
-    .hero-badge {
-        margin-top: var(--space-12) !important; /* Aumentado */
-        position: relative;
-        z-index: 11;
-    }
-    
-    /* Correção específica para o container do badge */
-    .hero-content .hero-badge {
-        margin-top: var(--space-12) !important; /* Aumentado */
-        padding-top: var(--space-8) !important; /* Aumentado */
-    }
-}
-
-/* Ajuste adicional para dispositivos ainda menores */
-@media (max-width: 480px) {
-    .hero-section {
-        padding-top: 220px !important; /* Aumentado drasticamente para evitar ocultação total */
-    }
-      /* Ajuste do badge em mobile - CORREÇÃO: margem superior adicional para evitar sobreposição */
-    .hero-badge {
-        margin-top: var(--space-20) !important; /* Aumentado drasticamente */
-        margin-bottom: var(--space-8) !important;
-    }
-    
-    .hero-badge .badge {
-        font-size: 0.75rem !important;
-        padding: var(--space-1) var(--space-3) !important;
     }
 }
 
@@ -637,7 +602,6 @@
 /* Específico para a faixa problemática de 577px a 768px */
 @media (min-width: 577px) and (max-width: 768px) {
     .hero-section {
-        padding-top: 200px !important;
         position: relative;
         z-index: 1 !important; /* Reduzido para ficar abaixo da navbar */
     }
