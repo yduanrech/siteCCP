@@ -4,6 +4,8 @@
 
 /* ===================================
    MOBILE SMALL (320px - 480px)
+   CORREÇÃO: Padding-top ajustado para evitar sobreposição
+   do conteúdo hero com navbar em modo hambúrguer
    =================================== */
 
 @media (max-width: 480px) {
@@ -180,11 +182,59 @@
    HERO SECTION RESPONSIVE
    =================================== */
 
-@media (max-width: 768px) {
+/* Correção específica para telas entre 769px e 991px (tablets/desktop pequeno) */
+@media (min-width: 769px) and (max-width: 991px) {
     .hero-section {
-        min-height: 80vh;
-        padding-top: 100px;
+        padding-top: 160px !important; /* Padding específico para esta faixa */
+        position: relative;
+        z-index: 1 !important; /* Reduzido para ficar abaixo da navbar */
+    }
+    
+    .hero-content {
+        position: relative !important;
+        z-index: 2 !important; /* Maior que hero-section, mas menor que navbar */
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    .hero-badge {
+        margin-top: var(--space-10) !important;
+        position: relative;
+        z-index: 3 !important; /* Maior que hero-content, mas menor que navbar */
+        background: none !important;
+        background-color: transparent !important;
+    }
+}
+
+@media (max-width: 768px) {    /* CORREÇÃO HERO: Padding-top ajustado para telas médias - AUMENTADO */
+    .hero-section {
+        padding-top: 180px !important; /* Aumentado significativamente para evitar sobreposição total */
         padding-bottom: var(--space-12);
+        position: relative;
+        z-index: 1 !important; /* Reduzido para ficar abaixo da navbar */
+    }
+    
+    .hero-content {
+        position: relative !important;
+        z-index: 2 !important; /* Maior que hero-section, mas menor que navbar */
+        background: none !important;
+        background-color: transparent !important;
+    }
+      /* Badge com margem superior adicional para evitar sobreposição */
+    .hero-badge {
+        margin-top: var(--space-12) !important; /* Aumentado */
+        position: relative;
+        z-index: 3 !important; /* Maior que hero-content, mas menor que navbar */
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* Correção específica para o container do badge */
+    .hero-content .hero-badge {
+        margin-top: var(--space-12) !important; /* Aumentado */
+        padding-top: var(--space-6) !important; /* Aumentado */
+        background: none !important;
+        background-color: transparent !important;
     }
     
     .hero-section h1 {
@@ -222,13 +272,22 @@
 }
 
 @media (max-width: 576px) {
+    /* CORREÇÃO HERO: Padding-top aumentado para telas muito pequenas - CORRIGIDO PARA S20 ULTRA */
     .hero-section {
-        padding-top: 120px;
+        padding-top: 200px !important; /* Aumentado significativamente para S20 Ultra (412x915) */
         padding-bottom: var(--space-12);
     }
     
+    /* Badge com espaçamento maior para garantir visibilidade */
+    .hero-badge {
+        margin-top: var(--space-16) !important; /* Aumentado para total visibilidade */
+        margin-bottom: var(--space-8) !important;
+        position: relative;
+        z-index: 11;
+    }
+    
     .hero-section .container {
-        min-height: calc(100vh - 120px);
+        min-height: calc(100vh - 200px); /* Ajustado para o novo padding */
     }
     
     .hero-title {
@@ -298,12 +357,43 @@
         margin: 0 !important;
         text-align: center;
     }
-    
-    .modern-dropdown .dropdown-item:hover {
+      .modern-dropdown .dropdown-item:hover {
         background: rgba(255,255,255,0.1) !important;
         color: var(--white) !important;
         transform: none !important;
         padding: var(--space-2) var(--space-4) !important;
+    }      /* CORREÇÃO HERO: Padding-top adicional para evitar sobreposição com navbar expandida - AUMENTADO */
+    .hero-section {
+        padding-top: 180px !important; /* Aumentado significativamente para resolver problema em ~950px */
+    }
+      /* Badge com margem superior adicional para evitar sobreposição */
+    .hero-badge {
+        margin-top: var(--space-12) !important; /* Aumentado */
+        position: relative;
+        z-index: 11;
+    }
+    
+    /* Correção específica para o container do badge */
+    .hero-content .hero-badge {
+        margin-top: var(--space-12) !important; /* Aumentado */
+        padding-top: var(--space-8) !important; /* Aumentado */
+    }
+}
+
+/* Ajuste adicional para dispositivos ainda menores */
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 220px !important; /* Aumentado drasticamente para evitar ocultação total */
+    }
+      /* Ajuste do badge em mobile - CORREÇÃO: margem superior adicional para evitar sobreposição */
+    .hero-badge {
+        margin-top: var(--space-20) !important; /* Aumentado drasticamente */
+        margin-bottom: var(--space-8) !important;
+    }
+    
+    .hero-badge .badge {
+        font-size: 0.75rem !important;
+        padding: var(--space-1) var(--space-3) !important;
     }
 }
 
@@ -482,4 +572,122 @@
         image-rendering: -webkit-optimize-contrast;
         image-rendering: optimize-contrast;
     }
+}
+
+/* ===================================
+   SOLUÇÃO DE EMERGÊNCIA - BADGE HERO
+   Garantia de visibilidade total do badge em todos os dispositivos
+   =================================== */
+
+/* Regra específica para o badge ser sempre visível */
+.hero-badge {
+    position: relative !important;
+    z-index: 15 !important; /* Z-index moderado para garantir visibilidade sem sobrepor navbar */
+    /* Removido fundo branco indesejado */
+    background: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    backdrop-filter: none !important;
+    margin-top: var(--space-6) !important;
+    margin-bottom: var(--space-6) !important;
+}
+
+/* Específico para o badge interno */
+.hero-badge .badge {
+    position: relative !important;
+    z-index: 16 !important; /* Z-index moderado */
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15) !important; /* Sombra mais sutil */
+}
+
+/* Ajustes específicos por resolução - VALORES AUMENTADOS */
+@media (max-width: 991px) {
+    .hero-badge {
+        margin-top: var(--space-12) !important;
+        padding-top: var(--space-6) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-badge {
+        margin-top: var(--space-16) !important;
+        padding-top: var(--space-8) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-badge {
+        margin-top: var(--space-20) !important;
+        padding-top: var(--space-10) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badge {
+        margin-top: var(--space-24) !important;
+        padding-top: var(--space-12) !important;
+    }
+}
+
+/* ===================================
+   CORREÇÃO CRÍTICA - HERO CONTENT Z-INDEX
+   Resolve problema da hero-content ir atrás da navbar entre 577px e 768px
+   =================================== */
+
+/* Específico para a faixa problemática de 577px a 768px */
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero-section {
+        padding-top: 200px !important;
+        position: relative;
+        z-index: 1 !important; /* Reduzido para ficar abaixo da navbar */
+    }
+    
+    .hero-content {
+        position: relative !important;
+        z-index: 2 !important; /* Maior que hero-section, mas menor que navbar */
+        /* Remove qualquer background que possa ter sido adicionado */
+        background: none !important;
+        background-color: transparent !important;
+    }
+    
+    .hero-badge {
+        margin-top: var(--space-20) !important; /* 5rem */
+        position: relative !important;
+        z-index: 3 !important; /* Maior que hero-content, mas menor que navbar */
+        /* Remove fundo branco */
+        background: none !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        backdrop-filter: none !important;
+    }
+    
+    .hero-badge .badge {
+        z-index: 4 !important; /* Maior que hero-badge, mas menor que navbar */
+        /* Mantém apenas sombra sutil para destaque */
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1) !important;
+    }
+}
+
+/* ===================================
+   LIMPEZA DE ESTILOS INDESEJADOS
+   Remove fundos brancos e garante transparência
+   =================================== */
+
+/* Remove qualquer fundo branco que possa ter sido adicionado */
+.hero-content,
+.hero-badge {
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Garante z-index adequado em todas as resoluções */
+.hero-content {
+    position: relative;
+    z-index: 15; /* Maior que o z-index padrão (10), mas menor que navbar (1030) */
+}
+
+.hero-badge {
+    position: relative;
+    z-index: 20; /* Ainda maior, mas menor que navbar */
 }

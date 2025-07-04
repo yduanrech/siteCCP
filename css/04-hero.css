@@ -13,6 +13,51 @@
     padding-bottom: 0;
 }
 
+/* Garantir que o padding-top seja adequado em dispositivos móveis */
+@media (max-width: 991px) {
+    .hero-section {
+        padding-top: 160px; /* Aumentado para garantir visibilidade total */
+    }
+    
+    /* Badge com margem superior para evitar sobreposição */
+    .hero-badge {
+        margin-top: var(--space-10) !important; /* Aumentado */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 180px; /* Aumentado significativamente */
+    }
+    
+    /* Badge com margem superior adicional */
+    .hero-badge {
+        margin-top: var(--space-12) !important; /* Aumentado */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 200px; /* Aumentado para smartphones como S20 Ultra */
+    }
+    
+    /* Badge com margem superior para smartphones */
+    .hero-badge {
+        margin-top: var(--space-16) !important; /* Aumentado */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 220px; /* Aumentado para smartphones pequenos */
+    }
+    
+    /* Badge com margem superior máxima para telas muito pequenas */
+    .hero-badge {
+        margin-top: var(--space-20) !important; /* Aumentado */
+    }
+}
+
 .hero-modern {
     background: var(--gradient-hero);
     color: var(--white);
@@ -122,6 +167,8 @@
     justify-content: flex-start;
     margin-bottom: var(--space-4);
     width: 100%;
+    position: relative;
+    z-index: 11; /* Garante que fique acima da navbar */
 }
 
 .hero-badge .badge {
@@ -264,7 +311,7 @@
 @media (max-width: 768px) {
     .hero-section {
         min-height: 100vh;
-        padding-top: 100px;
+        padding-top: 180px; /* Atualizado para consistência */
         padding-bottom: var(--space-16);
         text-align: left;
     }
@@ -279,7 +326,7 @@
     }
     
     .hero-section .container {
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 180px); /* Ajustado para o novo padding */
     }
     
     .hero-title {
@@ -326,12 +373,12 @@
 
 @media (max-width: 576px) {
     .hero-section {
-        padding-top: 120px;
+        padding-top: 200px; /* Atualizado para consistência com S20 Ultra */
         padding-bottom: var(--space-12);
     }
     
     .hero-section .container {
-        min-height: calc(100vh - 120px);
+        min-height: calc(100vh - 200px); /* Ajustado para o novo padding */
     }
     
     .hero-title {
