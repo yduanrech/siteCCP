@@ -229,7 +229,7 @@
     
     /* Correção específica para o container do badge */
     .hero-content .hero-badge {
-        margin-top: var(--space-12) !important; /* Aumentado */
+        margin-top: var(--space-6) !important; /* Aumentado */
         padding-top: var(--space-6) !important; /* Aumentado */
         background: none !important;
         background-color: transparent !important;
