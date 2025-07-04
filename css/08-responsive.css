@@ -1,0 +1,485 @@
+/* ===================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   =================================== */
+
+/* ===================================
+   MOBILE SMALL (320px - 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    /* Typography */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Badges */
+    .professional-badge {
+        font-size: 0.75rem;
+        padding: var(--space-1) var(--space-3);
+    }
+    
+    /* Cards */
+    .value-prop-card {
+        padding: var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+    
+    .value-prop-card .icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+    
+    .service-card {
+        padding: var(--space-6);
+        margin-bottom: var(--space-6);
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 1.5rem;
+    }
+    
+    /* Metrics */
+    .metric-number {
+        font-size: 2rem;
+    }
+    
+    /* Buttons */
+    .whatsapp-cta {
+        padding: var(--space-3) var(--space-6);
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .btn-lg {
+        padding: var(--space-3) var(--space-6);
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    .professional-footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
+    
+    .footer-main .row > div {
+        margin-bottom: var(--space-8);
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .feature-pills {
+        justify-content: center;
+    }
+    
+    /* Utilities */
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    .mb-mobile-4 {
+        margin-bottom: var(--space-4) !important;
+    }
+    
+    .px-mobile-3 {
+        padding-left: var(--space-3) !important;
+        padding-right: var(--space-3) !important;
+    }
+}
+
+/* ===================================
+   MOBILE MEDIUM (481px - 768px)
+   =================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .advantage-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+}
+
+/* ===================================
+   TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .metrics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .advantage-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===================================
+   DESKTOP LARGE (1025px+)
+   =================================== */
+
+@media (min-width: 1025px) {
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .advantage-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ===================================
+   HERO SECTION RESPONSIVE
+   =================================== */
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 80vh;
+        padding-top: 100px;
+        padding-bottom: var(--space-12);
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.125rem;
+    }
+    
+    .hero-section .row > div {
+        margin-bottom: var(--space-6);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .hero-cta-primary,
+    .hero-cta-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .value-proposition h6 {
+        white-space: normal;
+        font-size: 0.9rem;
+    }
+    
+    .value-proposition .col-4 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: var(--space-12);
+    }
+    
+    .hero-section .container {
+        min-height: calc(100vh - 120px);
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-cta-primary,
+    .hero-cta-secondary {
+        padding: var(--space-3) var(--space-6);
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   SERVICE CARDS RESPONSIVE
+   =================================== */
+
+@media (max-width: 575px) {
+    .services-grid .col-md-6 {
+        margin-bottom: var(--space-6);
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .services-grid .col-md-6 {
+        margin-bottom: var(--space-6);
+    }
+}
+
+/* ===================================
+   NAVBAR RESPONSIVE
+   =================================== */
+
+@media (max-width: 991px) {
+    .modern-navbar .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .modern-navbar .navbar-brand img {
+        max-height: 35px;
+    }
+    
+    .modern-navbar .navbar-nav .nav-link {
+        padding: var(--space-2) var(--space-3) !important;
+        margin: var(--space-1) 0;
+        text-align: center;
+    }
+    
+    .modern-dropdown {
+        position: static !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: transparent !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .modern-dropdown .dropdown-item {
+        color: rgba(255,255,255,0.9) !important;
+        background: transparent !important;
+        padding: var(--space-2) var(--space-4) !important;
+        margin: 0 !important;
+        text-align: center;
+    }
+    
+    .modern-dropdown .dropdown-item:hover {
+        background: rgba(255,255,255,0.1) !important;
+        color: var(--white) !important;
+        transform: none !important;
+        padding: var(--space-2) var(--space-4) !important;
+    }
+}
+
+/* ===================================
+   SCROLL RESPONSIVE
+   =================================== */
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+    
+    #servicos {
+        scroll-margin-top: 70px;
+        padding-top: clamp(2rem, 6vw, 4rem) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        scroll-padding-top: 60px;
+    }
+    
+    #servicos {
+        scroll-margin-top: 60px;
+        padding-top: clamp(1.5rem, 5vw, 3rem) !important;
+    }
+}
+
+/* ===================================
+   FLOATING ELEMENTS RESPONSIVE
+   =================================== */
+
+@media (max-width: 768px) {
+    .floating-equipment,
+    .floating-pulseira,
+    .floating-impressora,
+    .floating-carimbo {
+        display: none;
+    }
+    
+    .hero-banner,
+    .hero-banner-pulseiras,
+    .hero-banner-impressoes,
+    .hero-banner-carimbos,
+    .hero-banner-crachas,
+    .hero-banner-outros {
+        min-height: 70vh;
+    }
+}
+
+/* ===================================
+   CONTAINER RESPONSIVE
+   =================================== */
+
+@media (max-width: 575px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* ===================================
+   ADVANTAGE ITEMS RESPONSIVE
+   =================================== */
+
+@media (max-width: 480px) {
+    .advantage-list {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+    }
+    
+    .advantage-item {
+        padding: var(--space-4);
+        flex-direction: column;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid var(--primary-color);
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+    
+    .equipment-item {
+        padding: var(--space-4);
+    }
+    
+    .equipment-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .equipment-icon i {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===================================
+   CONTACT CARDS RESPONSIVE
+   =================================== */
+
+@media (max-width: 768px) {
+    .contact-card {
+        margin-bottom: var(--space-6);
+    }
+    
+    .contact-details {
+        text-align: center;
+    }
+}
+
+/* ===================================
+   FOOTER RESPONSIVE
+   =================================== */
+
+@media (max-width: 576px) {
+    .footer-brand,
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links a {
+        justify-content: center;
+    }
+    
+    .hour-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-1);
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+}
+
+/* ===================================
+   LANDSCAPE ORIENTATION
+   =================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ===================================
+   HIGH DPI DISPLAYS
+   =================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-logo,
+    .navbar-brand img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+}

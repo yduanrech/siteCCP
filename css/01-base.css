@@ -1,0 +1,303 @@
+/* ===================================
+   BASE STYLES & RESET
+   =================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    scroll-padding-top: 90px;
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        scroll-padding-top: 60px;
+    }
+}
+
+body {
+    font-family: 'Bahnschrift', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-weight: 400;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* ===================================
+   TIPOGRAFIA
+   =================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bahnschrift', sans-serif;
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+}
+
+.display-1 { font-size: 4.5rem; font-weight: 700; line-height: 1; }
+.display-2 { font-size: 3.75rem; font-weight: 700; line-height: 1; }
+.display-3 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+.display-4 { font-size: 2.5rem; font-weight: 700; line-height: 1.1; }
+.display-5 { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+.display-6 { font-size: 1.75rem; font-weight: 700; line-height: 1.2; }
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.125rem; }
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 400;
+    margin-bottom: var(--space-6);
+}
+
+.text-xl { font-size: 1.25rem; line-height: 1.75; }
+.text-lg { font-size: 1.125rem; line-height: 1.75; }
+.text-base { font-size: 1rem; line-height: 1.5; }
+.text-sm { font-size: 0.875rem; line-height: 1.25; }
+.text-xs { font-size: 0.75rem; line-height: 1; }
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+}
+
+.text-primary { color: var(--text-primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-tertiary { color: var(--text-tertiary) !important; }
+.text-brand { color: var(--primary-color) !important; }
+.text-muted { color: var(--text-tertiary) !important; }
+.text-dark { color: var(--text-primary) !important; }
+
+/* ===================================
+   UTILIDADES GERAIS
+   =================================== */
+
+.text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Text selection personalizada */
+::selection {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+::-moz-selection {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Scrollbar personalizada para WebKit */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* ===================================
+   SEÇÕES MODERNAS
+   =================================== */
+
+.modern-section {
+    padding: var(--space-16) 0;
+    position: relative;
+}
+
+.section-sm {
+    padding: var(--space-16) 0;
+}
+
+.section-lg {
+    padding: var(--space-32) 0;
+}
+
+.modern-section-gray {
+    background: var(--gray-50);
+}
+
+.modern-section-primary {
+    background: var(--gradient-hero);
+    color: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===================================
+   CONTAINER & SPACING
+   =================================== */
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (max-width: 575px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.section-spacing {
+    padding: var(--space-20) 0;
+}
+
+.section-spacing-sm {
+    padding: var(--space-12) 0;
+}
+
+/* ===================================
+   ACESSIBILIDADE
+   =================================== */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    z-index: 999999;
+    transition: var(--transition-base);
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Estados de foco melhorados */
+.keyboard-navigation *:focus {
+    outline: 2px solid var(--primary-color) !important;
+    outline-offset: 2px !important;
+}
+
+/* ===================================
+   RESPONSIVE UTILITIES
+   =================================== */
+
+@media (max-width: 576px) {
+    .text-center-mobile {
+        text-align: center !important;
+    }
+    
+    .mb-mobile-4 {
+        margin-bottom: var(--space-4) !important;
+    }
+    
+    .px-mobile-3 {
+        padding-left: var(--space-3) !important;
+        padding-right: var(--space-3) !important;
+    }
+}
+
+/* ===================================
+   PREFERÊNCIAS DE ACESSIBILIDADE
+   =================================== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+        font-weight: 700;
+    }
+    
+    .service-card,
+    .value-prop-card,
+    .metric-item {
+        border: 2px solid var(--text-primary);
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+    .modern-navbar,
+    .whatsapp-cta,
+    .social-links {
+        display: none !important;
+    }
+    
+    .professional-footer {
+        background: var(--white) !important;
+        color: var(--text-primary) !important;
+    }
+    
+    * {
+        box-shadow: none !important;
+    }
+}

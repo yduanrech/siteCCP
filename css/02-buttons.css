@@ -1,0 +1,348 @@
+/* ===================================
+   SISTEMA DE BOTÕES
+   =================================== */
+
+.btn {
+    font-family: 'Bahnschrift', sans-serif;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform, box-shadow;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn i, .btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================
+   VARIAÇÕES DE BOTÕES
+   =================================== */
+
+.btn-primary {
+    background: var(--gradient-hero);
+    color: var(--white);
+    padding: var(--space-3) var(--space-6);
+    box-shadow: var(--elevation-primary);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-xl);
+    color: var(--white);
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(0) !important;
+    box-shadow: var(--elevation-primary) !important;
+    transition: box-shadow 0.1s ease !important;
+    scale: 1 !important;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: var(--space-3) var(--space-6);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--gradient-hero);
+    transition: var(--transition-smooth);
+    z-index: -1;
+}
+
+.btn-outline-primary:hover::after {
+    width: 100%;
+}
+
+.btn-outline-primary:hover {
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-primary);
+}
+
+.btn-outline-primary:active {
+    transform: translateY(0) !important;
+    box-shadow: var(--elevation-sm) !important;
+    transition: box-shadow 0.1s ease !important;
+    scale: 1 !important;
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--primary-color);
+    padding: var(--space-3) var(--space-6);
+    box-shadow: var(--elevation-sm);
+    border: 1px solid var(--gray-200);
+}
+
+.btn-light:hover {
+    background: var(--gray-50);
+    color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--elevation-md);
+    border-color: var(--gray-300);
+}
+
+.btn-light:active {
+    transform: translateY(0) !important;
+    box-shadow: var(--elevation-sm) !important;
+    transition: box-shadow 0.1s ease !important;
+    scale: 1 !important;
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: var(--space-3) var(--space-6);
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-md);
+}
+
+.btn-outline-light:active {
+    transform: translateY(0) !important;
+    box-shadow: none !important;
+    transition: box-shadow 0.1s ease !important;
+    scale: 1 !important;
+}
+
+/* ===================================
+   TAMANHOS DE BOTÕES
+   =================================== */
+
+.btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: 1.125rem;
+    border-radius: var(--radius-xl);
+}
+
+.btn-sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+}
+
+/* ===================================
+   BOTÕES ESPECIAIS
+   =================================== */
+
+.modern-btn {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.modern-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    border-radius: inherit;
+    transition: var(--transition-smooth);
+    transform: scale(0);
+    z-index: -1;
+}
+
+.modern-btn:hover::before {
+    transform: scale(1);
+}
+
+/* WhatsApp CTA */
+.whatsapp-cta {
+    background: linear-gradient(135deg, #25d366 0%, #20b954 100%);
+    color: var(--white);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-xl);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    transition: var(--transition-smooth);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition-smooth);
+}
+
+.whatsapp-cta:hover::before {
+    left: 100%;
+}
+
+.whatsapp-cta:hover {
+    color: var(--white);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-cta i {
+    font-size: 1.5rem;
+}
+
+/* WhatsApp Button Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: var(--space-8);
+    right: var(--space-8);
+    z-index: var(--z-modal);
+    background: linear-gradient(135deg, #25d366 0%, #20b954 100%);
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: var(--elevation-lg);
+    transition: var(--transition-smooth);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: var(--elevation-xl);
+    color: var(--white);
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% { transform: translateY(0) scale(1.1); }
+    40% { transform: translateY(-10px) scale(1.1); }
+    80% { transform: translateY(-5px) scale(1.1); }
+}
+
+/* ===================================
+   ESTADOS DE FOCO
+   =================================== */
+
+.btn:focus,
+.whatsapp-cta:focus,
+.whatsapp-float:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: var(--radius-lg);
+}
+
+/* ===================================
+   RIPPLE EFFECT
+   =================================== */
+
+.ripple-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+    z-index: 0;
+    transform-origin: center;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+
+@media (max-width: 480px) {
+    .whatsapp-cta {
+        padding: var(--space-3) var(--space-6);
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .btn-lg {
+        padding: var(--space-3) var(--space-6);
+        font-size: 1rem;
+    }
+}

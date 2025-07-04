@@ -1,0 +1,398 @@
+/* ===================================
+   COMPONENTES ESPECÍFICOS
+   Consolidação dos arquivos CSS existentes
+   =================================== */
+
+/* ===================================
+   ABOUT SECTION COMPONENTS
+   (Consolidado de about-section.css)
+   =================================== */
+
+/* Métricas de credibilidade */
+.credibility-metrics {
+    margin: var(--space-8) 0;
+}
+
+.credibility-metrics .row {
+    gap: var(--space-4);
+}
+
+.metric-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.01) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.metric-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.metric-card:hover::before {
+    opacity: 1;
+}
+
+/* Diferenciais competitivos */
+.competitive-advantages {
+    margin: var(--space-8) 0;
+}
+
+.advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--elevation-sm);
+    transition: var(--transition-smooth);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: var(--space-4);
+}
+
+.advantage-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--elevation-md);
+    background: var(--gray-50);
+}
+
+.advantage-item i {
+    color: var(--success-color);
+    font-size: 1.25rem;
+    margin-right: var(--space-3);
+    flex-shrink: 0;
+}
+
+.advantage-item span {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.advantage-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* ===================================
+   EQUIPMENT SHOWCASE COMPONENTS
+   (Consolidado de equipment-showcase.css)
+   =================================== */
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.equipment-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--elevation-sm);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.equipment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.equipment-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-bottom: var(--space-3);
+    padding: 5px;
+}
+
+.equipment-info {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.equipment-info h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: var(--space-2);
+}
+
+.equipment-info h6::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: #2563EB;
+}
+
+.equipment-info p {
+    margin: var(--space-1) 0 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+    font-weight: 300;
+}
+
+.equipment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.equipment-card:hover::before {
+    opacity: 1;
+}
+
+.equipment-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ===================================
+   CONTACT CARDS COMPONENTS
+   (Consolidado de contact-cards.css)
+   =================================== */
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--elevation-sm);
+    transition: var(--transition-smooth);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    opacity: 0;
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--elevation-lg);
+    border-color: var(--primary-color);
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-hero);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    position: relative;
+    z-index: 2;
+}
+
+.icon-container i {
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.contact-card h5 {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: var(--space-3);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-details .d-flex {
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.4;
+    min-height: 24px;
+}
+
+.contact-details a {
+    transition: var(--transition-base);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-1px);
+}
+
+.contact-details i {
+    color: var(--primary-color);
+    margin-right: var(--space-2);
+}
+
+.text-tertiary {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+}
+
+/* CTA Discreto para Orçamentos */
+.contact-cta-discrete {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.contact-cta-discrete h6 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.contact-cta-discrete p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+    font-size: 0.875rem;
+}
+
+/* ===================================
+   MODERN EFFECTS COMPONENTS
+   (Consolidado de modern-effects.css)
+   =================================== */
+
+.premium-effect {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.premium-effect:hover {
+    transform: translateY(-5px);
+}
+
+.modern-effect {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efeito glassmorphism */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+
+@media (max-width: 992px) {
+    .showcase-grid {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .showcase-grid {
+        max-width: 280px;
+        gap: var(--space-4);
+    }
+    
+    .equipment-card img {
+        max-height: 220px;
+    }
+    
+    .equipment-info h6 {
+        font-size: 1rem;
+    }
+    
+    .equipment-info p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-card {
+        margin-bottom: var(--space-6);
+    }
+    
+    .contact-details {
+        text-align: center;
+    }
+    
+    .advantage-item {
+        flex-direction: column;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid var(--primary-color);
+    }
+}

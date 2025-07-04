@@ -1,0 +1,322 @@
+/* ===================================
+   HERO SECTIONS
+   =================================== */
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-subtle);
+    padding-top: 90px;
+    padding-bottom: 0;
+}
+
+.hero-modern {
+    background: var(--gradient-hero);
+    color: var(--white);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.02) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-modern::before {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* ===================================
+   HERO BANNERS (PÁGINAS INTERNAS)
+   =================================== */
+
+.hero-banner,
+.hero-banner-pulseiras,
+.hero-banner-impressoes,
+.hero-banner-carimbos,
+.hero-banner-crachas,
+.hero-banner-outros {
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+}
+
+.hero-banner::before,
+.hero-banner-pulseiras::before,
+.hero-banner-impressoes::before,
+.hero-banner-carimbos::before,
+.hero-banner-crachas::before,
+.hero-banner-outros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-banner .container,
+.hero-banner-pulseiras .container,
+.hero-banner-impressoes .container,
+.hero-banner-carimbos .container,
+.hero-banner-crachas .container,
+.hero-banner-outros .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================
+   HERO CONTENT
+   =================================== */
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+    opacity: 0.9;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-4);
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-6);
+}
+
+.hero-cta-primary {
+    background: var(--gradient-hero);
+    color: var(--white);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-xl);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    transition: var(--transition-smooth);
+    box-shadow: var(--elevation-lg);
+}
+
+.hero-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--elevation-xl);
+    color: var(--white);
+}
+
+.hero-cta-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-xl);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    transition: var(--transition-smooth);
+}
+
+.hero-cta-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+/* ===================================
+   HERO IMAGE
+   =================================== */
+
+.hero-image {
+    position: relative;
+    text-align: center;
+}
+
+.hero-logo {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+}
+
+/* ===================================
+   VALUE PROPOSITION
+   =================================== */
+
+.value-proposition {
+    margin: var(--space-8) 0;
+}
+
+.value-proposition .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.value-proposition .col-4 {
+    padding-left: 0 !important;
+    padding-right: 8px !important;
+}
+
+.value-proposition h6 {
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.value-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+/* ===================================
+   FLOATING ELEMENTS
+   =================================== */
+
+.floating-element {
+    position: relative;
+    z-index: 3;
+}
+
+.floating-image {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+}
+
+/* ===================================
+   RESPONSIVE HERO
+   =================================== */
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: var(--space-16);
+    }
+    
+    .hero-section .container {
+        min-height: calc(100vh - 100px);
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .hero-cta-primary,
+    .hero-cta-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .value-proposition h6 {
+        white-space: normal;
+        font-size: 0.9rem;
+    }
+    
+    .value-proposition .col-4 {
+        margin-bottom: 1rem;
+    }
+    
+    .hero-banner,
+    .hero-banner-pulseiras,
+    .hero-banner-impressoes,
+    .hero-banner-carimbos,
+    .hero-banner-crachas,
+    .hero-banner-outros {
+        min-height: 70vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 120px;
+        padding-bottom: var(--space-12);
+    }
+    
+    .hero-section .container {
+        min-height: calc(100vh - 120px);
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-cta-primary,
+    .hero-cta-secondary {
+        padding: var(--space-3) var(--space-6);
+        font-size: 1rem;
+    }
+}
