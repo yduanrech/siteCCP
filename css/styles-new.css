@@ -19,189 +19,38 @@
    ESTILOS ESPECÍFICOS COMPLEMENTARES
    =================================== */
 
-/* Melhorias na galeria de equipamentos 
-.equipment-gallery-card {
-    background: #f8f9fa !important;
-    border: 1px solid rgba(0,0,0,0.1) !important;
-    border-radius: 12px !important;
-    padding: 1rem !important;
-    text-align: center !important;
-}
-
-.equipment-gallery-card img {
-    max-height: 200px !important;
-    object-fit: contain !important;
-    width: 100% !important;
-}
-*/
-/* Remove qualquer fundo ou quadrado do logo da navbar 
-.navbar-brand img,
-.modern-navbar .navbar-brand img,
-.navbar .navbar-brand img {
-    background: none !important;
-    background-color: transparent !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    filter: none !important;
-    padding: 0 !important;
-    margin: 0 8px 0 0 !important;
-}
-*/
-/* Garante que não há wrapper com fundo 
-.navbar-brand {
-    background: none !important;
-    background-color: transparent !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
-    padding: 0 !important;
-}
-*/
-/* Remove animações de qualquer logo 
-.hero-section img,
-.hero-section .col-lg-5 img {
-    animation: none !important;
-    transform: none !important;
-    position: static !important;
-    transition: none !important;
-}*/
-
-/* Remove todas as animações flutuantes 
-.floating-element,
-.floating-image,
-.floating-pulseira-1,
-.floating-pulseira-2,
-.floating-impressora-1,
-.floating-carimbo-1 {
-    animation: none !important;
-    transform: none !important;
-    position: static !important;
-}
-    */
-
-/* Alinhamento perfeito dos benefícios - Hero Section */
+/* Alinhamento específico para hero section */
 .hero-content .row.g-3 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .hero-content .row.g-3 > [class*="col-"] {
-    padding-left: 0 !important;
+    padding-left: 0;
 }
 
-/* Melhor alinhamento para benefícios */
 .hero-section .row.g-2 {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .hero-section .row.g-2 > [class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 8px !important;
+    padding-left: 0;
+    padding-right: 8px;
 }
 
-/* Container principal com padding adequado */
+/* Container principal */
 .main-content {
     padding-top: 80px;
 }
 
-/* Service Cards - Altura uniforme */
-.service-card {
-    min-height: 450px;
-}
-
-.service-card .service-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.service-card .service-description {
-    flex-grow: 1;
-    margin-bottom: var(--space-6);
-}
-
-/* Melhorias no espaçamento das seções */
-section {
-    position: relative;
-    z-index: 1;
-}
-
-/* About Section - Espaçamento aprimorado */
-.about-section {
-    padding: var(--space-20) 0;
-    background: var(--white);
-}
-
-/* Melhorias no texto de introdução */
-.section-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto var(--space-16);
-}
-
-.section-intro h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: var(--space-4);
-    line-height: 1.2;
-}
-
-.section-intro p {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin: 0;
-}
-
 /* ===================================
-   COMPATIBILIDADE COM ARQUIVOS ANTIGOS
+   OTIMIZAÇÕES DE PERFORMANCE
    =================================== */
 
-/* Classes específicas mantidas para compatibilidade */
-/* .premium-effect e .modern-effect estão definidas em 09-components.css */
-
-/* ===================================
-   OVERRIDE ESPECÍFICOS
-   =================================== */
-
-/* Garante que as importações funcionem corretamente */
-@supports (color: color(display-p3 1 0 0)) {
-    :root {
-        --primary-color: color(display-p3 0.15 0.42 0.92);
-    }
-}
-
-/* Dark mode support (futuro) */
-@media (prefers-color-scheme: dark) {
-    /* Placeholder para futuro suporte ao modo escuro */
-}
-
-/* ===================================
-   OTIMIZAÇÕES FINAIS
-   =================================== */
-
-/* Preload critical resources */
-.critical-resource {
-    font-display: swap;
-}
-
-/* Improve font rendering */
+/* Melhora o renderização das fontes */
 body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-/* Optimize animations for 60fps */
-.smooth-animation {
-    will-change: transform;
-    transform: translateZ(0);
-}
-
-/* Critical path optimization */
-.above-fold {
-    contain: layout style paint;
 }
