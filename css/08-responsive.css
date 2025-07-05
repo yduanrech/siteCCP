@@ -786,3 +786,61 @@
         display: none !important;
     }
 }
+
+/* ===================================
+   ABOUT - Credibility Metrics Responsive
+   =================================== */
+@media (max-width: 576px) {
+    .credibility-metrics .row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: var(--space-3) !important;
+    }
+    .credibility-metrics .col-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        margin-bottom: var(--space-2) !important;
+    }
+    .metric-card {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Espaço entre botão 'Seja Nosso Parceiro' e showcase-grid abaixo */
+    #sobre .about-content .btn {
+        display: block !important;
+        margin: 0 auto var(--space-6) auto !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Espaço entre botão 'Seja Nosso Parceiro' e showcase-grid/imagem abaixo */
+    #sobre .about-content .btn {
+        display: block !important;
+        margin: 0 auto var(--space-6) auto !important;
+    }
+}
+
+/* ===================================
+   SHOWCASE GRID RESPONSIVE
+   =================================== */
+
+@media (max-width: 991px) {
+    /* Showcase under 'Sobre' inline em telas médias */
+    .showcase-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: var(--space-4) !important;
+        max-width: none !important;
+        margin: var(--space-4) auto !important;
+    }
+    .showcase-grid .equipment-card {
+        flex: 0 0 calc(50% - var(--space-4)) !important;
+        max-width: calc(50% - var(--space-4)) !important;
+    }
+}

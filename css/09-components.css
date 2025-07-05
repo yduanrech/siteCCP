@@ -509,7 +509,7 @@
     }
     
     .credibility-metrics .row {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--space-3);
     }
     
