@@ -187,6 +187,11 @@
     .hero-section {
         position: relative;
         z-index: 1 !important;
+        min-height: calc(100dvh - var(--navbar-height, 90px)) !important;
+        min-height: calc(100vh - var(--navbar-height, 90px)) !important;
+        padding-top: var(--space-6) !important;
+        padding-bottom: var(--space-6) !important;
+        margin-bottom: var(--space-6) !important;
     }
     
     .hero-content {
@@ -842,5 +847,23 @@
     .showcase-grid .equipment-card {
         flex: 0 0 calc(50% - var(--space-4)) !important;
         max-width: calc(50% - var(--space-4)) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    /* Ajuste de posicionamento e altura do hero em tablets */
+    .hero-section {
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: center !important;
+        padding-top: var(--space-8) !important;
+        padding-bottom: var(--space-6) !important;
+        min-height: calc(100dvh - var(--navbar-height)) !important;
+    }
+    .hero-content {
+        margin-top: 0 !important;
+    }
+    .hero-badge {
+        margin-top: var(--space-4) !important;
     }
 }

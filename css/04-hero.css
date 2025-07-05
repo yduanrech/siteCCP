@@ -5,7 +5,8 @@
 .hero-section {
     /* Atualização: usar margin-top para posicionar abaixo da navbar e ajustar altura mínima */
     margin-top: var(--navbar-height, 90px);
-    min-height: calc(100vh - var(--navbar-height, 90px));
+    min-height: calc(100dvh - var(--navbar-height, 90px));
+    
     display: flex;
     align-items: center;
     position: relative;
@@ -160,6 +161,7 @@
    Padronização das tags entre hero e about
    =================================== */
 
+/*
 .hero-badge .badge,
 .badge.bg-primary.bg-opacity-10.text-primary {
     display: inline-flex;
@@ -181,6 +183,7 @@
     background: rgba(37, 99, 235, 0.15) !important;
     transform: translateY(-1px);
 }
+*/
 
 .hero-cta {
     display: flex;
@@ -372,5 +375,15 @@
     .badge.bg-primary.bg-opacity-10.text-primary {
         font-size: 0.75rem !important;
         padding: var(--space-1) var(--space-3) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    .hero-section {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
