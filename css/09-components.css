@@ -327,6 +327,7 @@
     opacity: 0;
     transition: var(--transition-smooth);
     z-index: 1;
+    pointer-events: none;
 }
 
 .contact-card:hover::before {
@@ -375,8 +376,22 @@
     transition: var(--transition-base);
 }
 
-.contact-details a:hover {
-    color: var(--primary-color);
+/* ===================================
+   CONTACT CARDS - Seleção e Links
+   =================================== */
+.contact-card,
+.contact-card * {
+    user-select: text !important; /* todo texto pode ser selecionado */
+}
+
+.contact-card::before {
+    pointer-events: none; /* overlay não bloqueia cliques */
+}
+
+.contact-card a {
+    pointer-events: auto !important; /* apenas links respondem ao clique */
+    text-decoration: underline !important;
+    cursor: pointer !important;
 }
 
 /* ===================================
@@ -539,4 +554,15 @@
     .advantage-icon {
         margin-bottom: var(--space-3);
     }
+}
+
+/* ===================================
+   CONTACT CARDS - filhos interativos
+   =================================== */
+.contact-card {
+    pointer-events: none !important; /* container não bloqueia eventos */
+}
+.contact-card * {
+    pointer-events: auto !important; /* filhos podem receber cliques */
+    user-select: text !important; /* texto selecionável */
 }
