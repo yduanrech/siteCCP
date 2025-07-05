@@ -91,6 +91,7 @@
 
 .footer-brand img {
     margin-bottom: var(--space-3);
+    height: 60px !important;
 }
 
 .footer-brand h5 {
