@@ -5,7 +5,7 @@
 .professional-footer {
     background: var(--gradient-dark);
     color: var(--white);
-    padding: var(--space-20) 0 var(--space-8);
+    padding: var(--space-8) 0 var(--space-4); /* reduzido ~30% para height menor */
     position: relative;
     overflow: hidden;
 }
@@ -23,6 +23,12 @@
 .professional-footer .container {
     position: relative;
     z-index: 1;
+}
+
+/* Centralizar conteúdo do footer */
+.professional-footer .container > .row {
+    justify-content: center;
+    text-align: center;
 }
 
 /* ===================================
@@ -80,7 +86,7 @@
    =================================== */
 
 .footer-brand {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-3); /* reduzido para diminuir espaço abaixo das redes */
 }
 
 .footer-brand img {
@@ -188,6 +194,7 @@
 
 .social-links {
     display: flex;
+    justify-content: center; /* centralizar itens em desktop */
     gap: var(--space-4);
     margin-top: var(--space-6);
 }
@@ -282,7 +289,8 @@
 
 .footer-divider {
     border-color: rgba(255, 255, 255, 0.1);
-    margin: var(--space-8) 0;
+    margin: var(--space-2) auto; /* reduzido para cortar espaço livre pela metade */
+    width: 80%;
 }
 
 .copyright {
