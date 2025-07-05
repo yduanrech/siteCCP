@@ -329,6 +329,11 @@
    =================================== */
 
 @media (max-width: 991px) {
+    /* Hide dropdown menus by default in collapsed navbar */
+    .navbar-collapse .dropdown-menu {
+        display: none !important;
+    }
+
     .modern-navbar .navbar-brand {
         font-size: 1.25rem;
     }
@@ -365,6 +370,11 @@
         color: var(--white) !important;
         transform: none !important;
         padding: var(--space-2) var(--space-4) !important;
+    }
+
+    /* Show dropdown only when toggled */
+    .navbar-collapse .dropdown-menu.show {
+        display: block !important;
     }
 }
 

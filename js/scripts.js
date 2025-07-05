@@ -199,6 +199,27 @@ class CentroCopias {
 
         // Highlight do menu ativo
         this.highlightActiveMenu();
+
+        // Toggle hamburger animation on open/close
+        const navbarCollapseEl = document.getElementById('navbarNav');
+        const togglerBtn = document.querySelector('.navbar-toggler');
+        if (navbarCollapseEl && togglerBtn) {
+            navbarCollapseEl.addEventListener('shown.bs.collapse', () => {
+                togglerBtn.classList.add('active');
+            });
+            navbarCollapseEl.addEventListener('hidden.bs.collapse', () => {
+                togglerBtn.classList.remove('active');
+            });
+        }
+
+        // Auto-close collapse on menu item click (exclude dropdown-toggle)
+        document.querySelectorAll('.navbar-collapse .nav-link:not(.dropdown-toggle), .navbar-collapse .dropdown-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl)
+                    || new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+                bsCollapse.hide();
+            });
+        });
     }
 
     /**
