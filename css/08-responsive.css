@@ -203,6 +203,12 @@
         background: none !important;
         background-color: transparent !important;
     }
+    
+    /* Afasta a logo dos botões e do fundo nessa faixa */
+    .hero-image {
+        margin-top: var(--space-6) !important;
+        margin-bottom: var(--space-6) !important;
+    }
 }
 
 @media (max-width: 768px) {    /* CORREÇÃO HERO: Padding-top ajustado para telas médias - AUMENTADO */
@@ -749,5 +755,24 @@
     .hero-badge {
         margin-bottom: var(--space-2) !important;
         justify-content: center !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide hero image on mobile to keep foco no conteúdo */
+    .hero-image {
+        display: none !important;
+    }
+    /* Alternative: swap order so logo fique acima do conteúdo
+    .hero-section .row {
+        flex-direction: column-reverse !important;
+    }
+    */
+}
+
+/* Esconder logo hero-image em telas ≤991px */
+@media (max-width: 991px) {
+    .hero-image {
+        display: none !important;
     }
 }
