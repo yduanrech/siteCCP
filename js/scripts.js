@@ -1076,3 +1076,29 @@ window.CentroCopias = CentroCopias;
 window.showNotification = showNotification;
 window.AnimationUtils = AnimationUtils;
 window.trackEvent = trackEvent;
+
+// Dynamically load navbar and footer partials
+function loadPartial(id, url) {
+    fetch(url)
+        .then(res => res.text())
+        .then(html => document.getElementById(id).innerHTML = html)
+        .catch(err => console.error(`Error loading ${url}:`, err));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadPartial('navbar', 'partials/navbar.html');
+    loadPartial('footer', 'partials/footer.html');
+});
+
+// Global auto-close for navbar links (covers dynamically loaded partial)
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('.navbar-collapse .nav-link:not(.dropdown-toggle), .navbar-collapse .dropdown-item');
+    if (link) {
+        const navbarCollapseEl = document.getElementById('navbarNav');
+        if (navbarCollapseEl && window.bootstrap) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseEl)
+                || new bootstrap.Collapse(navbarCollapseEl, { toggle: false });
+            bsCollapse.hide();
+        }
+    }
+});
