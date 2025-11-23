@@ -52,7 +52,7 @@ const App: React.FC = () => {
                 <div className="relative bg-slate-200 rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
                   <img 
                     /*src="https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=2070" */
-                    src="images/photo-1503387762-592deb58ef4e_11zon.webp"
+                    src="/images/photo-1503387762-592deb58ef4e_11zon.webp"
                     alt="Atendimento no Centro de Cópias" 
                     className="w-full h-full object-cover"
                   />
