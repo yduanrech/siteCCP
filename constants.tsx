@@ -48,7 +48,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'crachas',
     title: 'Crachás e Identificação',
-    description: 'Crachás em PVC durável com cordões personalizados para sua equipe.',
+    description: 'Crachás em PVC durável com cordões para sua equipe.',
     icon: <IdCard className="w-8 h-8" />
   },
   {
@@ -66,7 +66,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'encadernacao',
     title: 'Encadernação',
-    description: 'Acabamento profissional espiral ou capa dura para apostilas, TCCs e livros.',
+    description: 'Acabamento profissional espiral para apostilas, TCCs e livros.',
     icon: <Book className="w-8 h-8" />
   },
   {
