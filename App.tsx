@@ -34,7 +34,7 @@ const App: React.FC = () => {
                   <Button 
                     variant="secondary"
                     icon={<MessageCircle className="w-5 h-5" />}
-                    onClick={() => window.open('https://wa.me/5548996595121', '_blank')}
+                    onClick={() => window.open('https://wa.me/5548999897021', '_blank')}
                   >
                     Pedir Orçamento no WhatsApp
                   </Button>
@@ -107,7 +107,7 @@ const App: React.FC = () => {
               <Button 
                 variant="primary" 
                 className="group"
-                onClick={() => window.open('https://wa.me/5548996595121', '_blank')}
+                onClick={() => window.open('https://wa.me/5548999897021', '_blank')}
               >
                 Fale com um atendente
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

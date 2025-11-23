@@ -12,7 +12,7 @@ export const ContactBar: React.FC = () => {
           <div className="flex-1 w-full md:w-auto">
             <h2 className="text-2xl font-bold mb-6 border-b border-[#1e97d1] pb-2 inline-block">Fale Conosco</h2>
             <div className="space-y-4">
-              <a href={`https://wa.me/5548996595121`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#1e97d1] transition-colors">
+              <a href={`https://wa.me/5548999897021`} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#1e97d1] transition-colors">
                 <div className="bg-white/10 p-2 rounded-md">
                   <MessageCircle className="w-6 h-6" />
                 </div>
