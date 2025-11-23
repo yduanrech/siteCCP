@@ -69,7 +69,7 @@ export const ContactBar: React.FC = () => {
                     <p className="font-medium leading-relaxed max-w-xs">
                       {CONTACT_INFO.hours}
                     </p>
-                    <p className="text-xs text-slate-400 mt-1">Fechado aos Sábados e Domingos</p>
+                    <p className="text-xs text-slate-400 mt-1">Fechado aos Domingos</p>
                   </div>
                 </div>
              </div>
