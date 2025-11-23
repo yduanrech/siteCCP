@@ -20,7 +20,7 @@ const App: React.FC = () => {
               {/* Hero Content */}
               <div className="flex-1 text-center lg:text-left space-y-6">
                 <div className="inline-block bg-[#1e97d1]/10 text-[#1e97d1] px-4 py-1 rounded-full text-sm font-bold mb-2">
-                  Desde 2004 em Braço do Norte
+                  Desde 1999 em Braço do Norte
                 </div>
                 <h1 className="text-4xl lg:text-5xl font-extrabold text-[#193762] leading-tight">
                   Serviços gráficos completos para você e sua empresa
@@ -51,7 +51,8 @@ const App: React.FC = () => {
                 <div className="absolute -inset-4 bg-[#1e97d1]/20 rounded-2xl transform rotate-3"></div>
                 <div className="relative bg-slate-200 rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
                   <img 
-                    src="https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=2070" 
+                    /*src="https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=2070" */
+                    src="images/photo-1503387762-592deb58ef4e_11zon.webp"
                     alt="Atendimento no Centro de Cópias" 
                     className="w-full h-full object-cover"
                   />
