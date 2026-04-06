@@ -23,8 +23,9 @@ export const LgpdPage: React.FC = () => {
 
         {/* Intro card */}
         <div className="bg-[#eff8ff] border-l-4 border-[#1e97d1] rounded-lg p-5 mb-8 text-sm leading-relaxed text-slate-700">
-          Informamos que seus dados pessoais foram cadastrados pela <strong>Centro de Cópias</strong> para fins
-          de emissão de faturas, controle financeiro e comunicações administrativas relacionadas aos serviços contratados.
+          Informamos que seus dados pessoais foram cadastrados pela <strong>Centro de Cópias</strong> no sistema{' '}
+          <strong>Orbys — Sistema de Gestão</strong>, plataforma utilizada para emissão de faturas, controle financeiro e comunicações
+          administrativas relacionadas aos serviços contratados.
         </div>
 
         {/* Finalidade */}
@@ -34,9 +35,10 @@ export const LgpdPage: React.FC = () => {
             Finalidade dos Dados
           </h2>
           <p className="text-sm text-slate-600 leading-relaxed mb-2">
-            Seus dados são utilizados exclusivamente para a execução dos serviços contratados, em conformidade com a{' '}
-            <strong>Lei nº 13.709/2018</strong> — Lei Geral de Proteção de Dados Pessoais (LGPD). Não compartilhamos suas
-            informações com terceiros para fins comerciais ou publicitários.
+            Seus dados são armazenados no sistema <strong>Orbys — Sistema de Gestão</strong> e utilizados exclusivamente para a execução
+            dos serviços contratados, em conformidade com a{' '}
+            <strong>Lei nº 13.709/2018</strong> — Lei Geral de Proteção de Dados Pessoais (LGPD). Não compartilhamos
+            suas informações com terceiros para fins comerciais ou publicitários.
           </p>
           <p className="text-xs text-slate-400 italic">
             Art. 6º, I e II da LGPD — princípios da finalidade e da adequação.
