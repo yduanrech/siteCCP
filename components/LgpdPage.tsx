@@ -35,13 +35,19 @@ export const LgpdPage: React.FC = () => {
             Finalidade dos Dados
           </h2>
           <p className="text-sm text-slate-600 leading-relaxed mb-2">
-            Seus dados são armazenados no sistema <strong>Orbys — Sistema de Gestão</strong> e utilizados exclusivamente para a execução
+            Seus dados são armazenados no sistema <strong>Orbys — Sistema de Gestão</strong> e utilizados para a execução
             dos serviços contratados, em conformidade com a{' '}
             <strong>Lei nº 13.709/2018</strong> — Lei Geral de Proteção de Dados Pessoais (LGPD). Não compartilhamos
             suas informações com terceiros para fins comerciais ou publicitários.
           </p>
+          <p className="text-sm text-slate-600 leading-relaxed mb-2">
+            Com base no <strong>legítimo interesse (Art. 7º, IX da LGPD)</strong>, seus dados de contato também poderão
+            ser utilizados para o envio de <strong>pesquisas de satisfação</strong> e consultas sobre melhorias nos
+            serviços oferecidos. Caso não deseje receber essas comunicações, entre em contato conosco. O cancelamento
+            implicará na interrupção de todos os envios por e-mail, incluindo faturas e avisos administrativos.
+          </p>
           <p className="text-xs text-slate-400 italic">
-            Art. 6º, I e II da LGPD — princípios da finalidade e da adequação.
+            Art. 6º, I e II e Art. 7º, V e IX da LGPD — princípios da finalidade, adequação e legítimo interesse.
           </p>
         </section>
 
